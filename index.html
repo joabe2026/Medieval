@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>História Medieval | Portal Acadêmico</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        academic: {
+                            50: '#FAF9F6',   /* Off-white parchment background */
+                            100: '#F3F0E6',  /* Soft surface */
+                            200: '#E5DFD0',  /* Subtle borders */
+                            300: '#C8BEA7',
+                            700: '#4A4235',  /* Muted text */
+                            800: '#2C251E',  /* Deep dark text */
+                            900: '#1A1510',
+                        },
+                        navy: {
+                            800: '#1E293B',
+                            900: '#0F172A',
+                            950: '#090D16',
+                        },
+                        gold: {
+                            500: '#D97706',
+                            600: '#B45309',
+                            700: '#92400E',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['EB Garamond', 'Georgia', 'serif'],
+                        heading: ['Cinzel', 'Georgia', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        .font-heading { font-family: 'Cinzel', serif; }
+        .font-serif { font-family: 'EB Garamond', serif; }
+        .font-sans { font-family: 'Plus Jakarta Sans', sans-serif; }
+        
+        /* Custom Academic Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.03);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #B45309;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #92400E;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(180, 83, 9, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-academic-50 dark:bg-navy-950 text-academic-800 dark:text-slate-100 font-sans transition-colors duration-200 min-h-screen flex flex-col antialiased">
+
+    <!-- Top Institutional Banner -->
+    <div class="bg-navy-900 text-slate-300 text-[11px] py-1.5 px-4 border-b border-navy-800">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-1">
+            <div class="flex items-center space-x-2">
+                <span class="font-semibold text-amber-400">Universidade do Estado do rio Grande do Norte</span>
+                <span>•</span>
+                <span>Departamento de História - DHI</span>
+                <span>•</span>
+                <span class="text-slate-400">Código Disciplina: MHI0067</span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <span><i class="fa-regular fa-clock mr-1 text-amber-400"></i> Sex • 18:50 - 22:20</span>
+                <span><i class="fa-solid fa-location-dot mr-1 text-amber-400"></i> Sala do Departamento de História</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-40 bg-white/95 dark:bg-navy-900/95 backdrop-blur border-b border-academic-200 dark:border-navy-800 shadow-sm transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                
+                <!-- Brand / Title -->
+                <div class="flex items-center space-x-3 cursor-pointer" onclick="switchTab('dashboard')">
+                    <div class="w-9 h-9 rounded bg-navy-900 dark:bg-gold-600 flex items-center justify-center text-amber-400 dark:text-navy-950 shadow-sm border border-gold-600/30">
+                        <i class="fa-solid fa-book-atlas text-base"></i>
+                    </div>
+                    <div>
+                        <span class="font-heading font-bold text-base sm:text-lg tracking-wide block text-navy-900 dark:text-amber-400 leading-none">HISTÓRIA MEDIEVAL</span>
+                        <span class="text-[11px] text-academic-700 dark:text-slate-400 block font-medium mt-0.5">Portal de Estudos & Leituras Obrigatórias</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Links -->
+                <nav class="hidden md:flex items-center space-x-1 lg:space-x-2">
+                    <button onclick="switchTab('dashboard')" id="nav-dashboard" class="nav-btn px-3 py-2 rounded text-xs font-semibold tracking-wide transition-colors hover:bg-academic-100 dark:hover:bg-navy-800 text-gold-600 dark:text-amber-400">
+                        <i class="fa-solid fa-table-columns mr-1.5 opacity-70"></i>Visão Geral
+                    </button>
+                    <button onclick="switchTab('texts')" id="nav-texts" class="nav-btn px-3 py-2 rounded text-xs font-semibold tracking-wide transition-colors hover:bg-academic-100 dark:hover:bg-navy-800 text-slate-600 dark:text-slate-300">
+                        <i class="fa-solid fa-box-archive mr-1.5 opacity-70"></i>Biblioteca de Textos
+                    </button>
+                    <button onclick="switchTab('study')" id="nav-study" class="nav-btn px-3 py-2 rounded text-xs font-semibold tracking-wide transition-colors hover:bg-academic-100 dark:hover:bg-navy-800 text-slate-600 dark:text-slate-300">
+                        <i class="fa-solid fa-graduation-cap mr-1.5 opacity-70"></i>Central de Revisão
+                    </button>
+                    <button onclick="switchTab('forum')" id="nav-forum" class="nav-btn px-3 py-2 rounded text-xs font-semibold tracking-wide transition-colors hover:bg-academic-100 dark:hover:bg-navy-800 text-slate-600 dark:text-slate-300">
+                        <i class="fa-solid fa-comments mr-1.5 opacity-70"></i>Fórum do Aluno
+                    </button>
+                    <button onclick="switchTab('notes')" id="nav-notes" class="nav-btn px-3 py-2 rounded text-xs font-semibold tracking-wide transition-colors hover:bg-academic-100 dark:hover:bg-navy-800 text-slate-600 dark:text-slate-300">
+                        <i class="fa-solid fa-pen-ruler mr-1.5 opacity-70"></i>Caderno Digital
+                    </button>
+                </nav>
+
+                <!-- Actions -->
+                <div class="flex items-center space-x-2">
+                    <button id="theme-toggle" onclick="toggleDarkMode()" class="p-2 rounded border border-academic-200 dark:border-navy-700 bg-academic-50 dark:bg-navy-800 text-slate-700 dark:text-slate-200 hover:bg-academic-100 dark:hover:bg-navy-700 transition" title="Alternar Modo Escuro">
+                        <i class="fa-solid fa-moon text-xs dark:hidden"></i>
+                        <i class="fa-solid fa-sun text-xs hidden dark:block text-amber-400"></i>
+                    </button>
+
+                    <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded border border-academic-200 dark:border-navy-700 text-slate-700 dark:text-slate-200">
+                        <i class="fa-solid fa-bars text-sm"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-academic-200 dark:border-navy-800 bg-white dark:bg-navy-900 px-4 py-3 space-y-1">
+            <button onclick="switchTab('dashboard'); toggleMobileMenu();" class="w-full text-left px-3 py-2 rounded text-xs font-medium text-slate-700 dark:text-slate-200 hover:bg-academic-100 dark:hover:bg-navy-800 flex items-center">
+                <i class="fa-solid fa-table-columns w-6 text-gold-600"></i>Visão Geral
+            </button>
+            <button onclick="switchTab('texts'); toggleMobileMenu();" class="w-full text-left px-3 py-2 rounded text-xs font-medium text-slate-700 dark:text-slate-200 hover:bg-academic-100 dark:hover:bg-navy-800 flex items-center">
+                <i class="fa-solid fa-box-archive w-6 text-gold-600"></i>Biblioteca de Textos
+            </button>
+            <button onclick="switchTab('study'); toggleMobileMenu();" class="w-full text-left px-3 py-2 rounded text-xs font-medium text-slate-700 dark:text-slate-200 hover:bg-academic-100 dark:hover:bg-navy-800 flex items-center">
+                <i class="fa-solid fa-graduation-cap w-6 text-gold-600"></i>Central de Revisão
+            </button>
+            <button onclick="switchTab('forum'); toggleMobileMenu();" class="w-full text-left px-3 py-2 rounded text-xs font-medium text-slate-700 dark:text-slate-200 hover:bg-academic-100 dark:hover:bg-navy-800 flex items-center">
+                <i class="fa-solid fa-comments w-6 text-gold-600"></i>Fórum de Dúvidas
+            </button>
+            <button onclick="switchTab('notes'); toggleMobileMenu();" class="w-full text-left px-3 py-2 rounded text-xs font-medium text-slate-700 dark:text-slate-200 hover:bg-academic-100 dark:hover:bg-navy-800 flex items-center">
+                <i class="fa-solid fa-pen-ruler w-6 text-gold-600"></i>Caderno Digital
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+
+        <!-- ================= TAB 1: DASHBOARD ================= -->
+        <section id="section-dashboard" class="tab-content space-y-6">
+            
+            <!-- Faculty Header Card -->
+            <div class="bg-white dark:bg-navy-900 rounded border border-academic-200 dark:border-navy-800 p-6 shadow-sm">
+                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+                    <div class="space-y-2 max-w-3xl">
+                        <div class="inline-flex items-center space-x-2 text-[11px] font-semibold text-gold-600 dark:text-amber-400 bg-amber-50 dark:bg-navy-800 px-2.5 py-0.5 rounded border border-amber-200 dark:border-amber-900/40">
+                            <i class="fa-solid fa-university text-[10px]"></i>
+                            <span>Graduação em História • Módulo Historiográfico</span>
+                        </div>
+                        <h1 class="font-heading text-2xl sm:text-3xl font-bold text-navy-900 dark:text-slate-100 tracking-tight">
+                            História Medieval: Novas Historiografias, Fronteiras e Globalidade
+                        </h1>
+                        <p class="font-serif text-base text-academic-700 dark:text-slate-300 leading-relaxed">
+                            Repositório central para leitura, análise historiográfica, fichamentos ABNT e estudos integrados sobre a Idade Média Global, a história do Mediterrâneo e a transição feudal.
+                        </p>
+                    </div>
+
+                    <!-- Side info -->
+                    <div class="bg-academic-50 dark:bg-navy-800/60 p-4 rounded border border-academic-200 dark:border-navy-700 text-xs space-y-2 lg:w-80 flex-shrink-0">
+                        <div class="font-semibold text-navy-900 dark:text-slate-200 border-b border-academic-200 dark:border-navy-700 pb-1.5 flex items-center justify-between">
+                            <span>Informações</span>
+                            <i class="fa-solid fa-graduation-cap text-slate-400"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-slate-800 dark:text-slate-200">CARLOS EDUARDO MARTINS TORCATO</p>
+                            <p class="text-slate-500 text-[11px]">Email: carlostorcato@uern.br</p>
+                        </div>
+                        <div class="pt-1 text-[11px] text-slate-600 dark:text-slate-300">
+                            <p><span class="font-semibold">Monitora: </span>  Maria Viviane Barbosa Silva</p>
+                            <p><span class="font-semibold">Email: </span> maria20230017140@alu.uern.br</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-white dark:bg-navy-900 p-4 rounded border border-academic-200 dark:border-navy-800">
+                    <p class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Leituras Selecionadas</p>
+                    <p class="text-xl font-bold font-heading text-navy-900 dark:text-amber-400 mt-1">4 Artigos/Capítulos</p>
+                    <p class="text-[10px] text-slate-400 mt-0.5">Perry Anderson, König, Bandeira & Menezes</p>
+                </div>
+                <div class="bg-white dark:bg-navy-900 p-4 rounded border border-academic-200 dark:border-navy-800">
+                    <p class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Próximo Seminário</p>
+                    <p class="text-xl font-bold font-heading text-rose-700 dark:text-rose-400 mt-1">24/OUT - Global Hist.</p>
+                    <p class="text-[10px] text-slate-400 mt-0.5">Debate de Historiografia Brasileira</p>
+                </div>
+                <div class="bg-white dark:bg-navy-900 p-4 rounded border border-academic-200 dark:border-navy-800">
+                    <p class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Seus Fichamentos</p>
+                    <p id="dash-notes-count" class="text-xl font-bold font-heading text-navy-900 dark:text-amber-400 mt-1">0 Notas</p>
+                    <p class="text-[10px] text-slate-400 mt-0.5">Salvos automaticamente no browser</p>
+                </div>
+                <div class="bg-white dark:bg-navy-900 p-4 rounded border border-academic-200 dark:border-navy-800">
+                    <p class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Formato de Citação</p>
+                    <p class="text-xl font-bold font-heading text-navy-900 dark:text-amber-400 mt-1">ABNT NBR 6023</p>
+                    <p class="text-[10px] text-slate-400 mt-0.5">Gerador em 1 clique</p>
+                </div>
+            </div>
+
+            <!-- Two Column: Notices & Featured Text -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="lg:col-span-2 space-y-6">
+                    <div class="bg-white dark:bg-navy-900 rounded border border-academic-200 dark:border-navy-800 p-5 shadow-sm">
+                        <div class="flex items-center justify-between border-b border-academic-200 dark:border-navy-800 pb-3 mb-4">
+                            <h2 class="font-heading text-base font-bold text-navy-900 dark:text-slate-100 flex items-center gap-2">
+                                <i class="fa-solid fa-bullhorn text-gold-600 text-sm"></i>
+                                Quadros de Avisos & Monitoria
+                            </h2>
+                            <span class="text-[10px] font-semibold text-slate-500 uppercase">Mural Oficial</span>
+                        </div>
+
+                        <div class="space-y-4 text-xs">
+                            <div class="p-3.5 bg-academic-50 dark:bg-navy-800/50 rounded border-l-2 border-gold-600 space-y-1">
+                                <div class="flex justify-between items-center text-slate-500 text-[11px]">
+                                    <span class="font-bold text-slate-800 dark:text-slate-200">Orientações para o Fichamento de Perry Anderson</span>
+                                    <span>Esta semana</span>
+                                </div>
+                                <p class="text-slate-600 dark:text-slate-300 leading-relaxed font-serif text-sm">
+                                    Ao analisar o texto de Perry Anderson (<em>Europa Ocidental</em>), concentrem-se na tese da síntese entre o modo de produção escravista romano e o modo de produção germânico como gênese do feudalismo.
+                                </p>
+                            </div>
+
+                            <div class="p-3.5 bg-academic-50 dark:bg-navy-800/50 rounded border-l-2 border-navy-800 dark:border-slate-500 space-y-1">
+                                <div class="flex justify-between items-center text-slate-500 text-[11px]">
+                                    <span class="font-bold text-slate-800 dark:text-slate-200">Debate: Idade Média Global na Historiografia Nacional</span>
+                                    <span>Próximo encontro</span>
+                                </div>
+                                <p class="text-slate-600 dark:text-slate-300 leading-relaxed font-serif text-sm">
+                                    Utilizem os artigos mais recentes de Nathalia Bandeira (2024) e Edilson Menezes Júnior (2025) para contrastar a historiografia eurocêntrica tradicional com os novos conceitos de territorialidade e história global.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="bg-white dark:bg-navy-900 rounded border border-academic-200 dark:border-navy-800 p-5 shadow-sm space-y-4">
+                        <h2 class="font-heading text-sm font-bold text-navy-900 dark:text-slate-100 border-b border-academic-200 dark:border-navy-800 pb-2 flex items-center gap-2">
+                            <i class="fa-regular fa-calendar-check text-gold-600"></i>
+                            Prazos de Entrega
+                        </h2>
+                        <ul class="space-y-2.5 text-xs">
+                            <li class="p-2.5 rounded bg-academic-50 dark:bg-navy-800 border border-academic-200 dark:border-navy-700 flex items-start space-x-3">
+                                <span class="bg-navy-900 text-amber-400 px-2 py-1 rounded font-bold text-[10px] font-heading flex-shrink-0">30/OCT</span>
+                                <div>
+                                    <p class="font-semibold text-slate-800 dark:text-slate-200">Fichamento ABNT #1</p>
+                                    <p class="text-slate-500 text-[11px]">Perry Anderson (pp. 151-202)</p>
+                                </div>
+                            </li>
+                            <li class="p-2.5 rounded bg-academic-50 dark:bg-navy-800 border border-academic-200 dark:border-navy-700 flex items-start space-x-3">
+                                <span class="bg-gold-600 text-white px-2 py-1 rounded font-bold text-[10px] font-heading flex-shrink-0">15/NOV</span>
+                                <div>
+                                    <p class="font-semibold text-slate-800 dark:text-slate-200">Resenha Comparativa</p>
+                                    <p class="text-slate-500 text-[11px]">König & Menezes Jr. (Mediterrâneo e Fronteiras)</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= TAB 2: TEXTS LIBRARY ================= -->
+        <section id="section-texts" class="tab-content hidden space-y-6">
+            
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-white dark:bg-navy-900 p-6 rounded border border-academic-200 dark:border-navy-800 shadow-sm">
+                <div>
+                    <h1 class="font-heading text-xl font-bold text-navy-900 dark:text-slate-100">Biblioteca de Textos Indicados</h1>
+                    <p class="font-serif text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-0.5">
+                        Coletânea oficial de capítulos e artigos científicos disponibilizados para a disciplina.
+                    </p>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <button id="toggle-bookmarks-btn" onclick="toggleBookmarkFilter()" class="px-3 py-1.5 rounded border border-academic-200 dark:border-navy-700 bg-academic-50 dark:bg-navy-800 text-xs font-semibold text-slate-700 dark:text-slate-200 hover:bg-academic-100 dark:hover:bg-navy-700 transition flex items-center gap-1.5">
+                        <i class="fa-solid fa-bookmark text-gold-600"></i>
+                        <span>Apenas Salvos</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Filters -->
+            <div class="bg-white dark:bg-navy-900 p-4 rounded border border-academic-200 dark:border-navy-800 shadow-sm space-y-3">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-3">
+                    <div class="relative md:col-span-6">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-slate-400 text-xs"></i>
+                        <input type="text" id="search-input" oninput="filterTexts()" placeholder="Buscar por autor (Perry Anderson, König...), título ou conceito..." class="w-full pl-8 pr-3 py-1.5 bg-academic-50 dark:bg-navy-950 border border-academic-200 dark:border-navy-800 rounded text-xs text-slate-800 dark:text-slate-100">
+                    </div>
+
+                    <div class="md:col-span-3">
+                        <select id="category-filter" onchange="filterTexts()" class="w-full py-1.5 px-3 bg-academic-50 dark:bg-navy-950 border border-academic-200 dark:border-navy-800 rounded text-xs text-slate-800 dark:text-slate-100">
+                            <option value="ALL">Todas as Categorias</option>
+                            <option value="Historiografia Clássica">Historiografia Clássica</option>
+                            <option value="Idade Média Global">Idade Média Global</option>
+                            <option value="História Global">História Global & Territorialidade</option>
+                            <option value="Mediterrâneo Medieval">Mediterrâneo Medieval</option>
+                        </select>
+                    </div>
+
+                    <div class="md:col-span-3">
+                        <select id="tag-filter" onchange="filterTexts()" class="w-full py-1.5 px-3 bg-academic-50 dark:bg-navy-950 border border-academic-200 dark:border-navy-800 rounded text-xs text-slate-800 dark:text-slate-100">
+                            <option value="ALL">Todos os Marcadores</option>
+                            <option value="Obrigatória">Leitura Obrigatória</option>
+                            <option value="Recente">Produção Recente (2019-2025)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text Grid Container -->
+            <div id="texts-container" class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <!-- Javascript will render the 4 specific user texts dynamically -->
+            </div>
+
+            <div id="texts-empty-state" class="hidden text-center py-12 bg-white dark:bg-navy-900 rounded border border-dashed border-academic-300 dark:border-navy-800 space-y-2">
+                <i class="fa-solid fa-folder-open text-3xl text-slate-400"></i>
+                <p class="font-semibold text-sm text-slate-700 dark:text-slate-200">Nenhum texto encontrado com esses critérios</p>
+                <p class="text-xs text-slate-500">Ajuste o filtro ou digite outro nome de autor na busca.</p>
+            </div>
+        </section>
+
+        <!-- ================= TAB 3: REVISION & STUDY TOOLS ================= -->
+        <section id="section-study" class="tab-content hidden space-y-6">
+            
+            <div class="bg-white dark:bg-navy-900 p-6 rounded border border-academic-200 dark:border-navy-800 shadow-sm space-y-1">
+                <h1 class="font-heading text-xl font-bold text-navy-900 dark:text-slate-100">Central de Estudo & Revisão Historiográfica</h1>
+                <p class="font-serif text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+                    Fixação dos conceitos centrais presentes na bibliografia indicada pelo professor.
+                </p>
+            </div>
+
+            <!-- Subtab Switcher -->
+            <div class="flex border-b border-academic-200 dark:border-navy-800 space-x-6 text-xs">
+                <button onclick="switchStudySubtab('flashcards')" id="subtab-btn-flashcards" class="pb-2 font-bold border-b-2 border-gold-600 text-gold-600 flex items-center gap-2">
+                    <i class="fa-solid fa-layer-group"></i> Cartões de Conceitos
+                </button>
+                <button onclick="switchStudySubtab('quiz')" id="subtab-btn-quiz" class="pb-2 font-medium border-b-2 border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 flex items-center gap-2">
+                    <i class="fa-solid fa-circle-question"></i> Simulado da Matéria
+                </button>
+            </div>
+
+            <!-- Flashcards Subtab -->
+            <div id="subtab-flashcards" class="space-y-4">
+                <div class="max-w-xl mx-auto space-y-4">
+                    <div class="flex justify-between items-center text-xs text-slate-500">
+                        <span id="flashcard-counter">Conceito 1 de 4</span>
+                        <span>Clique no cartão para ver a resposta/definição</span>
+                    </div>
+
+                    <div id="flashcard" onclick="flipCard()" class="min-h-[220px] bg-white dark:bg-navy-900 border-2 border-academic-200 dark:border-navy-700 rounded-lg p-6 shadow-sm hover:shadow transition cursor-pointer flex flex-col justify-between text-center relative">
+                        <span id="flashcard-tag" class="text-[10px] font-bold text-gold-600 uppercase tracking-wider block">Historiografia</span>
+                        
+                        <div class="my-auto py-4">
+                            <h3 id="flashcard-text" class="font-heading text-lg font-bold text-navy-900 dark:text-slate-100">
+                                Pergunta
+                            </h3>
+                            <p id="flashcard-subtext" class="font-serif text-sm text-slate-600 dark:text-slate-300 mt-2 hidden">
+                                Resposta
+                            </p>
+                        </div>
+
+                        <span class="text-[10px] text-slate-400 italic"><i class="fa-solid fa-rotate mr-1"></i> Alternar frente/verso</span>
+                    </div>
+
+                    <div class="flex justify-between items-center">
+                        <button onclick="prevCard()" class="px-3.5 py-1.5 bg-white dark:bg-navy-900 border border-academic-200 dark:border-navy-700 text-xs font-semibold rounded hover:bg-academic-50">
+                            <i class="fa-solid fa-chevron-left mr-1"></i> Anterior
+                        </button>
+                        <button onclick="nextCard()" class="px-3.5 py-1.5 bg-navy-900 dark:bg-gold-600 text-white dark:text-navy-950 text-xs font-semibold rounded hover:opacity-90">
+                            Próximo <i class="fa-solid fa-chevron-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quiz Subtab -->
+            <div id="subtab-quiz" class="hidden space-y-4">
+                <div class="max-w-2xl mx-auto bg-white dark:bg-navy-900 p-6 rounded border border-academic-200 dark:border-navy-800 shadow-sm space-y-6">
+                    <div id="quiz-start-screen" class="text-center space-y-3 py-4">
+                        <i class="fa-solid fa-file-pen text-3xl text-gold-600"></i>
+                        <h2 class="font-heading text-lg font-bold text-navy-900 dark:text-slate-100">Simulado de Questões com base na Bibliografia</h2>
+                        <p class="font-serif text-xs text-slate-600 dark:text-slate-300 max-w-md mx-auto">
+                            Questões fundamentadas nos textos de Perry Anderson, Daniel König, Nathalia Bandeira e Edilson Menezes Jr.
+                        </p>
+                        <button onclick="startQuiz()" class="px-5 py-2 bg-navy-900 dark:bg-gold-600 text-amber-400 dark:text-navy-950 font-bold text-xs rounded transition">
+                            Iniciar Simulado
+                        </button>
+                    </div>
+
+                    <div id="quiz-active-screen" class="hidden space-y-4">
+                        <div class="flex justify-between items-center text-xs border-b border-academic-200 dark:border-navy-800 pb-2">
+                            <span id="quiz-progress" class="font-bold text-navy-900 dark:text-amber-400">Questão 1</span>
+                            <span id="quiz-score-badge" class="text-slate-500">Pontuação: 0</span>
+                        </div>
+
+                        <h3 id="quiz-question-text" class="font-semibold text-sm text-slate-800 dark:text-slate-100">
+                            Pergunta...
+                        </h3>
+
+                        <div id="quiz-options-container" class="space-y-2"></div>
+
+                        <div id="quiz-feedback" class="hidden p-3 rounded text-xs font-serif leading-relaxed"></div>
+
+                        <div class="flex justify-end pt-2">
+                            <button id="quiz-next-btn" onclick="nextQuestion()" class="hidden px-4 py-1.5 bg-navy-900 text-white text-xs font-semibold rounded">
+                                Próxima Questão
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="quiz-result-screen" class="hidden text-center space-y-3 py-4">
+                        <h2 class="font-heading text-lg font-bold">Resultado do Simulado</h2>
+                        <p id="quiz-final-score" class="font-serif text-sm text-slate-700 dark:text-slate-300">Você acertou X de Y.</p>
+                        <button onclick="startQuiz()" class="px-4 py-2 bg-navy-900 text-amber-400 text-xs font-bold rounded">Refazer Teste</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= TAB 4: STUDENT FORUM ================= -->
+        <section id="section-forum" class="tab-content hidden space-y-6">
+            <div class="bg-white dark:bg-navy-900 p-6 rounded border border-academic-200 dark:border-navy-800 shadow-sm space-y-1">
+                <h1 class="font-heading text-xl font-bold text-navy-900 dark:text-slate-100">Fórum de Dúvidas & Debates Historiográficos</h1>
+                <p class="font-serif text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+                    Espaço colaborativo para troca de ideias, dúvidas sobre os textos e formação de grupos de estudo.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Post Question Form -->
+                <div class="bg-white dark:bg-navy-900 p-5 rounded border border-academic-200 dark:border-navy-800 shadow-sm space-y-4">
+                    <h2 class="font-heading text-sm font-bold border-b border-academic-200 dark:border-navy-800 pb-2">Nova Publicação</h2>
+                    <div class="space-y-3 text-xs">
+                        <div>
+                            <label class="block font-semibold text-slate-700 dark:text-slate-300 mb-1">Seu Nome / Matrícula</label>
+                            <input type="text" id="forum-author-input" placeholder="Ex: Lucas (Graduando)" class="w-full p-2 bg-academic-50 dark:bg-navy-950 border border-academic-200 dark:border-navy-800 rounded">
+                        </div>
+                        <div>
+                            <label class="block font-semibold text-slate-700 dark:text-slate-300 mb-1">Texto Referenciado</label>
+                            <select id="forum-text-select" class="w-full p-2 bg-academic-50 dark:bg-navy-950 border border-academic-200 dark:border-navy-800 rounded">
+                                <option value="Geral">Dúvida Geral da Matéria</option>
+                                <option value="Perry Anderson">Perry Anderson - Europa Ocidental</option>
+                                <option value="Nathalia Bandeira">Nathalia Bandeira - Idade Média Global</option>
+                                <option value="Edilson Menezes Jr.">Edilson Menezes Jr. - Fronteiras</option>
+                                <option value="Daniel König">Daniel König - Mediterrâneo Medieval</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block font-semibold text-slate-700 dark:text-slate-300 mb-1">Título do Tópico</label>
+                            <input type="text" id="forum-title-input" placeholder="Ex: Tese da síntese em Perry Anderson" class="w-full p-2 bg-academic-50 dark:bg-navy-950 border border-academic-200 dark:border-navy-800 rounded">
+                        </div>
+                        <div>
+                            <label class="block font-semibold text-slate-700 dark:text-slate-300 mb-1">Mensagem ou Dúvida</label>
+                            <textarea id="forum-body-input" rows="4" placeholder="Escreva aqui seu comentário ou ponto para debate..." class="w-full p-2 bg-academic-50 dark:bg-navy-950 border border-academic-200 dark:border-navy-800 rounded font-serif"></textarea>
+                        </div>
+                        <button onclick="addForumPost()" class="w-full py-2 bg-navy-900 dark:bg-gold-600 text-amber-400 dark:text-navy-950 font-bold rounded hover:opacity-90 transition">
+                            Publicar no Fórum
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Posts Feed -->
+                <div class="lg:col-span-2 space-y-4" id="forum-posts-container">
+                    <!-- Dynamic Forum Posts -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= TAB 5: PERSONAL NOTES ================= -->
+        <section id="section-notes" class="tab-content hidden space-y-6">
+            
+            <div class="bg-white dark:bg-navy-900 p-6 rounded border border-academic-200 dark:border-navy-800 shadow-sm space-y-1">
+                <h1 class="font-heading text-xl font-bold text-navy-900 dark:text-slate-100">Caderno Digital de Fichamentos</h1>
+                <p class="font-serif text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+                    Escreva sínteses dos capítulos lidos, citações e rascunhos acadêmicos. Salvo no seu navegador.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="bg-white dark:bg-navy-900 p-4 rounded border border-academic-200 dark:border-navy-800 space-y-3">
+                    <button onclick="createNewNote()" class="w-full py-2 bg-gold-600 hover:bg-gold-700 text-white font-semibold text-xs rounded transition flex items-center justify-center gap-1.5">
+                        <i class="fa-solid fa-plus"></i> Novo Fichamento
+                    </button>
+                    <div id="notes-list" class="space-y-1.5 max-h-96 overflow-y-auto">
+                        <!-- Dynamic Notes -->
+                    </div>
+                </div>
+
+                <div class="lg:col-span-2 bg-white dark:bg-navy-900 p-6 rounded border border-academic-200 dark:border-navy-800 shadow-sm space-y-4">
+                    <input type="text" id="note-title-input" placeholder="Título do Fichamento (Ex: Fichamento - Perry Anderson)" class="w-full font-heading font-bold text-base bg-transparent border-b border-academic-200 dark:border-navy-700 pb-2 text-slate-800 dark:text-slate-100">
+                    
+                    <div class="flex gap-2 text-[11px] text-slate-500 font-semibold">
+                        <button onclick="insertNoteTemplate('abnt')" class="px-2 py-1 bg-academic-100 dark:bg-navy-800 rounded hover:bg-academic-200">+ Estrutura ABNT</button>
+                        <button onclick="insertNoteTemplate('quote')" class="px-2 py-1 bg-academic-100 dark:bg-navy-800 rounded hover:bg-academic-200">+ Bloco Citação Direta</button>
+                    </div>
+
+                    <textarea id="note-body-input" rows="12" placeholder="Digite aqui suas anotações, síntese do texto, teses do autor e citações com número da página..." class="w-full p-3 bg-academic-50 dark:bg-navy-950 border border-academic-200 dark:border-navy-800 rounded font-serif text-sm leading-relaxed text-slate-800 dark:text-slate-200"></textarea>
+
+                    <div class="flex justify-between items-center pt-2">
+                        <span class="text-[11px] text-slate-400"><i class="fa-solid fa-floppy-disk mr-1"></i> Salvo automaticamente no navegador</span>
+                        <button onclick="deleteCurrentNote()" class="px-3 py-1 bg-rose-100 dark:bg-rose-950 text-rose-700 dark:text-rose-300 rounded text-xs font-semibold hover:bg-rose-200 transition">
+                            Excluir Fichamento
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Reader / ABNT Modal -->
+    <div id="reader-modal" class="fixed inset-0 z-50 hidden bg-navy-950/70 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-navy-900 w-full max-w-3xl rounded border border-academic-200 dark:border-navy-800 shadow-xl max-h-[90vh] flex flex-col overflow-hidden">
+            <div class="p-5 border-b border-academic-200 dark:border-navy-800 flex justify-between items-start bg-academic-50 dark:bg-navy-900">
+                <div class="space-y-1">
+                    <span id="modal-category-badge" class="px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-amber-100 dark:bg-navy-800 text-amber-800 dark:text-amber-400">Categoria</span>
+                    <h2 id="modal-title" class="font-heading text-lg font-bold text-navy-900 dark:text-slate-100">Título do Texto</h2>
+                    <p id="modal-author" class="text-xs text-slate-500 font-medium">Autor / Referência</p>
+                </div>
+                <button onclick="closeReaderModal()" class="text-slate-400 hover:text-slate-600 p-1">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <div class="p-6 overflow-y-auto space-y-4 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+                <div class="p-3 bg-academic-50 dark:bg-navy-800/60 rounded border border-academic-200 dark:border-navy-700 space-y-1">
+                    <div class="flex justify-between items-center text-[10px] font-bold text-slate-500 uppercase">
+                        <span>Referência Bibliográfica Completa (ABNT)</span>
+                        <button onclick="copyABNTReference()" class="text-gold-600 hover:underline"><i class="fa-regular fa-copy"></i> Copiar Citação</button>
+                    </div>
+                    <p id="modal-abnt" class="font-serif text-xs font-semibold text-slate-800 dark:text-slate-200">Referência ABNT...</p>
+                </div>
+
+                <div class="space-y-1">
+                    <h4 class="font-bold text-xs uppercase text-slate-500">Resumo Historiográfico</h4>
+                    <p id="modal-summary" class="font-serif leading-relaxed text-slate-700 dark:text-slate-300">
+                        Resumo do texto...
+                    </p>
+                </div>
+
+                <div class="space-y-1 border-t border-academic-200 dark:border-navy-800 pt-3">
+                    <h4 class="font-bold text-xs uppercase text-slate-500">Excerto Selecionado para Estudo</h4>
+                    <blockquote id="modal-excerpt" class="p-3 bg-academic-50 dark:bg-navy-950 border-l-2 border-gold-600 font-serif italic text-xs leading-relaxed text-slate-800 dark:text-slate-200">
+                        "Trecho do texto..."
+                    </blockquote>
+                </div>
+            </div>
+
+            <div class="p-4 border-t border-academic-200 dark:border-navy-800 flex justify-between items-center bg-academic-50 dark:bg-navy-950 text-xs">
+                <button id="modal-bookmark-btn" onclick="" class="font-semibold text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
+                    <i class="fa-regular fa-bookmark text-gold-600"></i> Favoritar Leitura
+                </button>
+                <button onclick="openNoteForText()" class="px-4 py-2 bg-navy-900 dark:bg-gold-600 text-white dark:text-navy-950 font-bold rounded flex items-center gap-2">
+                    <i class="fa-solid fa-pen"></i> Iniciar Fichamento no Caderno
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-navy-900 border-t border-academic-200 dark:border-navy-800 py-6 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 text-center text-xs text-slate-500 space-y-1">
+            <p class="font-heading font-bold text-slate-700 dark:text-slate-300">HISTÓRIA MEDIEVAL • REPOSITÓRIO ACADÊMICO</p>
+            <p>Universidade do Estado do Rio Grande do Norte.</p>
+        </div>
+    </footer>
+
+    <script>
+        /* ================= EXACT 4 USER TEXTS DATA ================= */
+        const textsData = [
+            {
+                id: "txt-anderson",
+                title: "Europa Ocidental",
+                author: "ANDERSON, Perry",
+                category: "Historiografia Clássica",
+                pages: "pp. 151-202",
+                abnt: "ANDERSON, Perry. Europa Ocidental. In: Passagens da antiguidade ao feudalismo. São Paulo: Brasiliense, 2000, p.151-202.",
+                summary: "Capítulo clássico em que Perry Anderson analisa a transição do modo de produção escravista greco-romano ao modo de produção feudal na Europa Ocidental. O autor argumenta que o feudalismo foi o resultado de uma síntese catastrófica e criativa entre as estruturas romanas em dissolução e as instituições das tribos germânicas invasoras.",
+                excerpt: "O modo de produção feudal que emergiu na Europa ocidental durante a Idade Média foi o resultado de uma fusão entre os modos de produção romano e germânico... A síntese destas duas heranças produziu uma estrutura socioeconômica inédita calcada no feudo e na vassalagem.",
+                tags: ["Obrigatória", "Feudalismo", "Séc. XX"],
+                isBookmarked: false
+            },
+            {
+                id: "txt-bandeira",
+                title: "O impacto da Idade Média Global na historiografia brasileira (2016-2024)",
+                author: "BANDEIRA, Nathalia Marques",
+                category: "Idade Média Global",
+                pages: "pp. 486–517",
+                abnt: "BANDEIRA, Nathalia Marques. O impacto da Idade Média Global na historiografia brasileira (2016-2024). Temporalidades – Revista de História, v. 16, n. 1, p. 486–517, 2024.",
+                summary: "Exame historiográfico da recepção e apropriação do paradigma da 'Idade Média Global' pelos medievistas brasileiros entre 2016 e 2024. Analisa a superação da visão estritamente eurocêntrica e a renovação das pesquisas acadêmicas no Brasil através de abordagens conectadas e transregionais.",
+                excerpt: "A emergência da 'Global Middle Ages' ofereceu à historiografia brasileira um referencial teórico capaz de descentralizar o continente europeu, permitindo analisar dinâmicas de conexão, redes de troca no Índico e a circulação de saberes sem reducionismos nacionalistas.",
+                tags: ["Obrigatória", "Recente", "Historiografia Br"],
+                isBookmarked: false
+            },
+            {
+                id: "txt-menezes",
+                title: "Fronteiras na Idade Média: repensando a territorialidade a partir da história global",
+                author: "MENEZES JÚNIOR, Edilson Alves de",
+                category: "História Global",
+                pages: "pp. 106-124",
+                abnt: "MENEZES JÚNIOR, Edilson Alves de. Fronteiras na Idade Média: repensando a territorialidade a partir da história global. Revista Horizontes Históricos, v. 10, n. 1, p. 106-124, 2025.",
+                summary: "Reflexão teórica que problematiza o conceito rígido de fronteira estatal moderno projetado anacronicamente sobre o medievo. O autor propõe repensar as territorialidades medievais a partir da História Global, enfatizando zonas de contato, fluidez cultural e espaços de alteridade flexíveis.",
+                excerpt: "Longe de limites lineares e cartograficamente definidos, as fronteiras medievais operavam como zonas dinâmicas de interação, nas quais a territorialidade era moldada por lealdades pessoais, redes religiosas e zonas de transição porosas.",
+                tags: ["Obrigatória", "Recente", "Territorialidade"],
+                isBookmarked: false
+            },
+            {
+                id: "txt-konig",
+                title: "Conceitualizando a história do Mediterrâneo: perspectivas medievalísticas sobre uma categoria multifacetada",
+                author: "KÖNIG, Daniel",
+                category: "Mediterrâneo Medieval",
+                pages: "pp. 15-58",
+                abnt: "KÖNIG, Daniel. Conceitualizando a história do Mediterrâneo: perspectivas medievalísticas sobre uma categoria multifacetada. In: ALMEIDA, Néri de Barros; TORRE, Robson Della (Orgs.). O Mediterrâneo Medieval Considerado. Campinas, SP: Editora da UNICAMP, 2019, p.15-58.",
+                summary: "Análise crítica das diversas abordagens historiográficas que tentaram conceituar o Mediterrâneo no período medieval. Discussão da herança de Fernand Braudel, contrapontos com o mundo islâmico e bizantino e os desafios de encarar a bacia mediterrânea como barreira e como ponte de trocas intelectuais e materiais.",
+                excerpt: "Estudar o Mediterrâneo medieval exige desconstruir a dualidade simplista entre Cristandade e Islã, compreendendo este espaço marinho como uma zona complexa de simultânea rivalidade política, simbiose mercantil e tradução cultural.",
+                tags: ["Obrigatória", "Recente", "Mediterrâneo"],
+                isBookmarked: false
+            }
+        ];
+
+        const flashcardsData = [
+            {
+                term: "Síntese Romano-Germânica (Perry Anderson)",
+                tag: "Historiografia Clássica",
+                def: "Tese segundo a qual o modo de produção feudal resultou da fusão entre a crise do escravismo romano e as estruturas tribais e comunais dos povos germânicos."
+            },
+            {
+                term: "Idade Média Global (Nathalia Bandeira)",
+                tag: "Giro Historiográfico",
+                def: "Perspectiva analítica que descentraliza a Europa ocidental, conectando dinâmicas medievais com a Ásia, África e as redes transcontinentais no período."
+            },
+            {
+                term: "Fronteira Porosa / Zona de Contato (Menezes Jr.)",
+                tag: "Territorialidade",
+                def: "Conceito que substitui a noção anacrônica de limites estatais fixos na Idade Média por regiões dinâmicas de transição, troca e negociação de identidades."
+            },
+            {
+                term: "Mediterrâneo Multifacetado (Daniel König)",
+                tag: "História Marítima",
+                def: "Visão do mar Mediterrâneo não como fronteira religiosa impermeável, mas como espaço de coexistência, intercâmbio comercial e tradução de saberes entre latinos, bizantinos e árabes."
+            }
+        ];
+
+        const quizQuestions = [
+            {
+                q: "Qual é o argumento central de Perry Anderson no capítulo 'Europa Ocidental' sobre a formação do feudalismo?",
+                options: [
+                    "O feudalismo foi uma cópia exata do Império Bizantino",
+                    "Surgiu de uma síntese entre o modo de produção escravista romano e as estruturas germânicas",
+                    "Foi originado exclusivamente pela introdução do dinheiro na Baixa Idade Média",
+                    "Resultou unicamente das invasões vikings do século IX"
+                ],
+                correct: 1,
+                explanation: "Perry Anderson argumenta que a dissolução do escravismo romano aliada à decomposição do modo de produção germânico gerou a síntese feudal."
+            },
+            {
+                q: "Segundo o artigo de Nathalia Marques Bandeira (2024), qual o principal ganho da 'Idade Média Global' para a historiografia brasileira?",
+                options: [
+                    "Abandonar totalmente o estudo da história europeia nas faculdades",
+                    "Superar visões estritamente eurocêntricas e analisar conexões e redes globais no medievo",
+                    "Provado que o Brasil já existia no século VIII",
+                    "Limitar os estudos medievais à história do direito português"
+                ],
+                correct: 1,
+                explanation: "A autora demonstra que a Idade Média Global permite aos pesquisadores brasileiros descentralizar a Europa e examinar dinâmicas transregionais."
+            }
+        ];
+
+        /* ================= STATE & STORAGE ================= */
+        let bookmarks = JSON.parse(localStorage.getItem('academic_bookmarks_v2') || '[]');
+        let userNotes = JSON.parse(localStorage.getItem('academic_notes_v2') || '[]');
+        let forumPosts = JSON.parse(localStorage.getItem('academic_forum_v2') || '[]');
+        
+        let activeNoteId = null;
+        let showOnlyBookmarks = false;
+
+        let currentCardIndex = 0;
+        let isCardFlipped = false;
+
+        let currentQuizIndex = 0;
+        let quizScore = 0;
+        let activeModalTextId = null;
+
+        // Default forum seed if empty
+        if (forumPosts.length === 0) {
+            forumPosts = [
+                {
+                    id: 'post-1',
+                    author: 'Prof. Monitoria',
+                    textRef: 'Perry Anderson',
+                    title: 'Dica de leitura: Conceito de síntese',
+                    body: 'Ao lerem Perry Anderson, prestem atenção na comparação que ele faz entre o norte e o sul da Europa no tocante à herança romana.',
+                    date: '14/10/2026'
+                }
+            ];
+            localStorage.setItem('academic_forum_v2', JSON.stringify(forumPosts));
+        }
+
+        /* ================= NAVIGATION LOGIC ================= */
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            const target = document.getElementById(`section-${tabId}`);
+            if (target) target.classList.remove('hidden');
+
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('text-gold-600', 'dark:text-amber-400', 'font-bold');
+                btn.classList.add('text-slate-600', 'dark:text-slate-300');
+            });
+            const activeBtn = document.getElementById(`nav-${tabId}`);
+            if (activeBtn) {
+                activeBtn.classList.add('text-gold-600', 'dark:text-amber-400', 'font-bold');
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        }
+
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark');
+            localStorage.setItem('academic_darkmode', document.documentElement.classList.contains('dark'));
+        }
+
+        if (localStorage.getItem('academic_darkmode') === 'true') {
+            document.documentElement.classList.add('dark');
+        }
+
+        /* ================= TEXT RENDERER ================= */
+        function renderTexts() {
+            const container = document.getElementById('texts-container');
+            const emptyState = document.getElementById('texts-empty-state');
+            const searchVal = document.getElementById('search-input').value.toLowerCase();
+            const catVal = document.getElementById('category-filter').value;
+            const tagVal = document.getElementById('tag-filter').value;
+
+            const filtered = textsData.filter(item => {
+                const matchesSearch = item.title.toLowerCase().includes(searchVal) ||
+                                     item.author.toLowerCase().includes(searchVal) ||
+                                     item.summary.toLowerCase().includes(searchVal);
+                const matchesCat = catVal === 'ALL' || item.category === catVal;
+                const matchesTag = tagVal === 'ALL' || item.tags.includes(tagVal);
+                const matchesBookmark = !showOnlyBookmarks || bookmarks.includes(item.id);
+
+                return matchesSearch && matchesCat && matchesTag && matchesBookmark;
+            });
+
+            container.innerHTML = '';
+
+            if (filtered.length === 0) {
+                emptyState.classList.remove('hidden');
+            } else {
+                emptyState.classList.add('hidden');
+                filtered.forEach(item => {
+                    const isBookmarked = bookmarks.includes(item.id);
+                    const card = document.createElement('div');
+                    card.className = "bg-white dark:bg-navy-900 rounded border border-academic-200 dark:border-navy-800 p-5 shadow-sm hover:border-academic-300 dark:hover:border-navy-700 transition flex flex-col justify-between space-y-4";
+                    card.innerHTML = `
+                        <div class="space-y-2.5">
+                            <div class="flex justify-between items-start">
+                                <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-academic-100 dark:bg-navy-800 text-gold-600 dark:text-amber-400 uppercase tracking-wide">${item.category}</span>
+                                <button onclick="toggleBookmark('${item.id}', event)" class="text-xs text-slate-400 hover:text-gold-600 transition" title="Salvar leitura">
+                                    <i class="${isBookmarked ? 'fa-solid text-gold-600' : 'fa-regular'} fa-bookmark"></i>
+                                </button>
+                            </div>
+                            <div>
+                                <span class="text-[11px] font-bold text-slate-700 dark:text-slate-300 block">${item.author} • ${item.pages}</span>
+                                <h3 class="font-heading text-base font-bold text-navy-900 dark:text-slate-100 mt-1 leading-snug">${item.title}</h3>
+                            </div>
+                            <p class="font-serif text-xs text-slate-600 dark:text-slate-300 leading-relaxed line-clamp-4">
+                                ${item.summary}
+                            </p>
+                        </div>
+                        <div class="pt-3 border-t border-academic-100 dark:border-navy-800 space-y-2">
+                            <div class="flex flex-wrap gap-1">
+                                ${item.tags.map(t => `<span class="text-[9px] font-semibold px-2 py-0.5 bg-academic-50 dark:bg-navy-800 text-slate-600 dark:text-slate-400 rounded">${t}</span>`).join('')}
+                            </div>
+                            <button onclick="openReaderModal('${item.id}')" class="w-full py-2 bg-academic-100 dark:bg-navy-800 hover:bg-navy-900 hover:text-white dark:hover:bg-gold-600 dark:hover:text-navy-950 text-slate-800 dark:text-slate-200 text-xs font-semibold rounded transition flex items-center justify-center gap-1.5">
+                                <i class="fa-solid fa-book-open text-[10px]"></i> Consultar Ficha & Citação ABNT
+                            </button>
+                        </div>
+                    `;
+                    container.appendChild(card);
+                });
+            }
+        }
+
+        function filterTexts() {
+            renderTexts();
+        }
+
+        function toggleBookmark(id, event) {
+            if (event) event.stopPropagation();
+            if (bookmarks.includes(id)) {
+                bookmarks = bookmarks.filter(b => b !== id);
+            } else {
+                bookmarks.push(id);
+            }
+            localStorage.setItem('academic_bookmarks_v2', JSON.stringify(bookmarks));
+            renderTexts();
+        }
+
+        function toggleBookmarkFilter() {
+            showOnlyBookmarks = !showOnlyBookmarks;
+            const btn = document.getElementById('toggle-bookmarks-btn');
+            btn.classList.toggle('bg-amber-100');
+            renderTexts();
+        }
+
+        /* ================= MODAL & READER ================= */
+        function openReaderModal(id) {
+            const text = textsData.find(t => t.id === id);
+            if (!text) return;
+
+            activeModalTextId = id;
+            document.getElementById('modal-category-badge').innerText = text.category;
+            document.getElementById('modal-title').innerText = text.title;
+            document.getElementById('modal-author').innerText = `${text.author} (${text.pages})`;
+            document.getElementById('modal-abnt').innerText = text.abnt;
+            document.getElementById('modal-summary').innerText = text.summary;
+            document.getElementById('modal-excerpt').innerText = text.excerpt;
+
+            const isBookmarked = bookmarks.includes(id);
+            const bmBtn = document.getElementById('modal-bookmark-btn');
+            bmBtn.innerHTML = `<i class="${isBookmarked ? 'fa-solid text-gold-600' : 'fa-regular'} fa-bookmark"></i> ${isBookmarked ? 'Salvo nos Favoritos' : 'Salvar Leitura'}`;
+            bmBtn.onclick = () => { toggleBookmark(id); openReaderModal(id); };
+
+            document.getElementById('reader-modal').classList.remove('hidden');
+        }
+
+        function closeReaderModal() {
+            document.getElementById('reader-modal').classList.add('hidden');
+        }
+
+        function copyABNTReference() {
+            const abntText = document.getElementById('modal-abnt').innerText;
+            navigator.clipboard.writeText(abntText);
+            alert('Referência ABNT copiada para a área de transferência.');
+        }
+
+        function openNoteForText() {
+            const text = textsData.find(t => t.id === activeModalTextId);
+            closeReaderModal();
+            switchTab('notes');
+
+            const newNote = {
+                id: 'note-' + Date.now(),
+                title: `Fichamento - ${text.author}`,
+                body: `REFERÊNCIA ABNT:\n${text.abnt}\n\nSÍNTESE DO TEXTO:\n${text.summary}\n\nCITAÇÕES DESTAQUE:\n"${text.excerpt}"\n\nSUAS ANOTAÇÕES:\n- `
+            };
+            userNotes.unshift(newNote);
+            activeNoteId = newNote.id;
+            saveNotes();
+            loadActiveNote();
+        }
+
+        /* ================= FLASHCARDS LOGIC ================= */
+        function updateCardDisplay() {
+            const card = flashcardsData[currentCardIndex];
+            document.getElementById('flashcard-tag').innerText = card.tag;
+            document.getElementById('flashcard-text').innerText = isCardFlipped ? card.def : card.term;
+            document.getElementById('flashcard-counter').innerText = `Conceito ${currentCardIndex + 1} de ${flashcardsData.length}`;
+        }
+
+        function flipCard() {
+            isCardFlipped = !isCardFlipped;
+            updateCardDisplay();
+        }
+
+        function nextCard() {
+            isCardFlipped = false;
+            currentCardIndex = (currentCardIndex + 1) % flashcardsData.length;
+            updateCardDisplay();
+        }
+
+        function prevCard() {
+            isCardFlipped = false;
+            currentCardIndex = (currentCardIndex - 1 + flashcardsData.length) % flashcardsData.length;
+            updateCardDisplay();
+        }
+
+        function switchStudySubtab(subId) {
+            ['flashcards', 'quiz'].forEach(s => {
+                document.getElementById(`subtab-${s}`).classList.add('hidden');
+                const btn = document.getElementById(`subtab-btn-${s}`);
+                btn.classList.remove('border-gold-600', 'text-gold-600', 'font-bold');
+                btn.classList.add('border-transparent', 'text-slate-500');
+            });
+
+            document.getElementById(`subtab-${subId}`).classList.remove('hidden');
+            const activeBtn = document.getElementById(`subtab-btn-${subId}`);
+            activeBtn.classList.remove('border-transparent', 'text-slate-500');
+            activeBtn.classList.add('border-gold-600', 'text-gold-600', 'font-bold');
+        }
+
+        /* ================= QUIZ ENGINE ================= */
+        function startQuiz() {
+            currentQuizIndex = 0;
+            quizScore = 0;
+            document.getElementById('quiz-start-screen').classList.add('hidden');
+            document.getElementById('quiz-result-screen').classList.add('hidden');
+            document.getElementById('quiz-active-screen').classList.remove('hidden');
+            showQuestion();
+        }
+
+        function showQuestion() {
+            const q = quizQuestions[currentQuizIndex];
+            document.getElementById('quiz-progress').innerText = `Questão ${currentQuizIndex + 1} de ${quizQuestions.length}`;
+            document.getElementById('quiz-score-badge').innerText = `Pontuação: ${quizScore}`;
+            document.getElementById('quiz-question-text').innerText = q.q;
+
+            const optsContainer = document.getElementById('quiz-options-container');
+            optsContainer.innerHTML = '';
+
+            document.getElementById('quiz-feedback').classList.add('hidden');
+            document.getElementById('quiz-next-btn').classList.add('hidden');
+
+            q.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = "w-full text-left p-2.5 rounded border border-academic-200 dark:border-navy-700 bg-academic-50 dark:bg-navy-800 text-xs font-serif hover:bg-academic-100 transition";
+                btn.innerText = opt;
+                btn.onclick = () => selectQuizOption(idx);
+                optsContainer.appendChild(btn);
+            });
+        }
+
+        function selectQuizOption(optIdx) {
+            const q = quizQuestions[currentQuizIndex];
+            const feedback = document.getElementById('quiz-feedback');
+            const optsBtns = document.getElementById('quiz-options-container').children;
+
+            for (let btn of optsBtns) {
+                btn.disabled = true;
+                btn.classList.add('opacity-60');
+            }
+
+            if (optIdx === q.correct) {
+                quizScore += 10;
+                optsBtns[optIdx].classList.remove('opacity-60');
+                optsBtns[optIdx].classList.add('bg-emerald-100', 'border-emerald-500', 'font-bold', 'text-emerald-900');
+                feedback.className = "p-3 rounded text-xs font-serif bg-emerald-50 dark:bg-emerald-950/40 text-emerald-800 dark:text-emerald-300 border border-emerald-200";
+                feedback.innerText = "✓ Correto! " + q.explanation;
+            } else {
+                optsBtns[optIdx].classList.remove('opacity-60');
+                optsBtns[optIdx].classList.add('bg-rose-100', 'border-rose-500', 'font-bold', 'text-rose-900');
+                optsBtns[q.correct].classList.add('bg-emerald-100', 'font-bold', 'text-emerald-900');
+                feedback.className = "p-3 rounded text-xs font-serif bg-rose-50 dark:bg-rose-950/40 text-rose-800 dark:text-rose-300 border border-rose-200";
+                feedback.innerText = "✕ Incorreto. " + q.explanation;
+            }
+
+            feedback.classList.remove('hidden');
+            document.getElementById('quiz-next-btn').classList.remove('hidden');
+        }
+
+        function nextQuestion() {
+            currentQuizIndex++;
+            if (currentQuizIndex < quizQuestions.length) {
+                showQuestion();
+            } else {
+                document.getElementById('quiz-active-screen').classList.add('hidden');
+                document.getElementById('quiz-result-screen').classList.remove('hidden');
+                document.getElementById('quiz-final-score').innerText = `Você concluiu o teste com ${quizScore} pontos.`;
+            }
+        }
+
+        /* ================= FORUM LOGIC ================= */
+        function renderForumPosts() {
+            const container = document.getElementById('forum-posts-container');
+            container.innerHTML = '';
+
+            forumPosts.forEach(post => {
+                const card = document.createElement('div');
+                card.className = "bg-white dark:bg-navy-900 p-4 rounded border border-academic-200 dark:border-navy-800 shadow-sm space-y-2";
+                card.innerHTML = `
+                    <div class="flex justify-between items-center text-xs text-slate-500">
+                        <span class="font-bold text-navy-900 dark:text-amber-400">${post.author}</span>
+                        <span>${post.date}</span>
+                    </div>
+                    <span class="inline-block text-[10px] font-semibold px-2 py-0.5 bg-academic-100 dark:bg-navy-800 rounded text-gold-600">${post.textRef}</span>
+                    <h3 class="font-heading font-bold text-sm text-slate-800 dark:text-slate-100">${post.title}</h3>
+                    <p class="font-serif text-xs text-slate-600 dark:text-slate-300 leading-relaxed">${post.body}</p>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function addForumPost() {
+            const author = document.getElementById('forum-author-input').value.trim() || 'Estudante Anônimo';
+            const textRef = document.getElementById('forum-text-select').value;
+            const title = document.getElementById('forum-title-input').value.trim();
+            const body = document.getElementById('forum-body-input').value.trim();
+
+            if (!title || !body) {
+                alert('Preencha o título e o corpo da dúvida antes de publicar.');
+                return;
+            }
+
+            const newPost = {
+                id: 'post-' + Date.now(),
+                author,
+                textRef,
+                title,
+                body,
+                date: new Date().toLocaleDateString('pt-BR')
+            };
+
+            forumPosts.unshift(newPost);
+            localStorage.setItem('academic_forum_v2', JSON.stringify(forumPosts));
+            renderForumPosts();
+
+            document.getElementById('forum-title-input').value = '';
+            document.getElementById('forum-body-input').value = '';
+        }
+
+        /* ================= NOTEBOOK ENGINE ================= */
+        function renderNotesList() {
+            const list = document.getElementById('notes-list');
+            list.innerHTML = '';
+
+            if (userNotes.length === 0) {
+                list.innerHTML = '<p class="text-xs text-slate-400 p-2 italic text-center">Nenhum fichamento existente.</p>';
+                document.getElementById('note-title-input').value = '';
+                document.getElementById('note-body-input').value = '';
+                document.getElementById('dash-notes-count').innerText = '0 Fichamentos';
+                return;
+            }
+
+            document.getElementById('dash-notes-count').innerText = `${userNotes.length} Notas`;
+
+            userNotes.forEach(n => {
+                const item = document.createElement('div');
+                const isActive = n.id === activeNoteId;
+                item.className = `p-2.5 rounded cursor-pointer transition border text-xs ${isActive ? 'bg-navy-900 text-amber-400 dark:bg-gold-600 dark:text-navy-950 font-bold border-transparent' : 'bg-academic-50 dark:bg-navy-800 text-slate-700 dark:text-slate-200 border-academic-200 dark:border-navy-700 hover:bg-academic-100'}`;
+                item.onclick = () => selectNote(n.id);
+                item.innerHTML = `
+                    <p class="truncate font-medium">${n.title || 'Fichamento Sem Título'}</p>
+                    <p class="text-[10px] opacity-75 truncate font-serif mt-0.5">${n.body || 'Vazio...'}</p>
+                `;
+                list.appendChild(item);
+            });
+        }
+
+        function createNewNote() {
+            const newNote = {
+                id: 'note-' + Date.now(),
+                title: 'Fichamento - ' + new Date().toLocaleDateString('pt-BR'),
+                body: ''
+            };
+            userNotes.unshift(newNote);
+            activeNoteId = newNote.id;
+            saveNotes();
+            loadActiveNote();
+        }
+
+        function selectNote(id) {
+            activeNoteId = id;
+            loadActiveNote();
+            renderNotesList();
+        }
+
+        function loadActiveNote() {
+            const note = userNotes.find(n => n.id === activeNoteId);
+            if (!note) return;
+            document.getElementById('note-title-input').value = note.title;
+            document.getElementById('note-body-input').value = note.body;
+        }
+
+        function saveNotes() {
+            localStorage.setItem('academic_notes_v2', JSON.stringify(userNotes));
+            renderNotesList();
+        }
+
+        function deleteCurrentNote() {
+            if (!activeNoteId) return;
+            userNotes = userNotes.filter(n => n.id !== activeNoteId);
+            activeNoteId = userNotes.length > 0 ? userNotes[0].id : null;
+            saveNotes();
+            if (activeNoteId) loadActiveNote();
+        }
+
+        function insertNoteTemplate(type) {
+            const body = document.getElementById('note-body-input');
+            if (type === 'abnt') {
+                body.value += `\n\n--- ESTRUTURA ABNT ---\nREFERÊNCIA: \nTESE CENTRAL: \nARGUMENTOS DO AUTOR: \nCITAÇÕES CHAVE: \n`;
+            } else if (type === 'quote') {
+                body.value += `\n"Citação direta..." (SOBRENOME, Ano, p. XX)`;
+            }
+            body.dispatchEvent(new Event('input'));
+        }
+
+        document.getElementById('note-title-input').addEventListener('input', (e) => {
+            const note = userNotes.find(n => n.id === activeNoteId);
+            if (note) {
+                note.title = e.target.value;
+                saveNotes();
+            }
+        });
+
+        document.getElementById('note-body-input').addEventListener('input', (e) => {
+            const note = userNotes.find(n => n.id === activeNoteId);
+            if (note) {
+                note.body = e.target.value;
+                saveNotes();
+            }
+        });
+
+        /* ================= INITIALIZATION ================= */
+        window.onload = function() {
+            renderTexts();
+            updateCardDisplay();
+            renderForumPosts();
+
+            if (userNotes.length === 0) {
+                createNewNote();
+            } else {
+                activeNoteId = userNotes[0].id;
+                loadActiveNote();
+                renderNotesList();
+            }
+        };
+    </script>
+</body>
+</html>
