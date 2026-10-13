@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Codex Digitalis: Portal de Fontes Primárias para o Estudo da Idade Média.</title>
+    <title>História Medieval | Portal Acadêmico</title>
     
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -42,7 +43,7 @@
         }
     </script>
     
-    <!-- Google Fonts -->
+    <!-- Google Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -71,7 +72,6 @@
             background: #92400E;
         }
 
-        /* Subtle focus states */
         input:focus, select:focus, textarea:focus {
             outline: none;
             box-shadow: 0 0 0 2px rgba(180, 83, 9, 0.2);
@@ -84,55 +84,55 @@
     <div class="bg-navy-900 text-slate-300 text-[11px] py-1.5 px-4 border-b border-navy-800">
         <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-1">
             <div class="flex items-center space-x-2">
-                <span class="font-semibold text-amber-400">Universidade do Estado do Rio Grande do Norte</span>
+                <span class="font-semibold text-amber-400">Universidade do Estado do rio Grande do Norte</span>
                 <span>•</span>
                 <span>Departamento de História - DHI</span>
                 <span>•</span>
                 <span class="text-slate-400">Código Disciplina: MHI0067</span>
             </div>
             <div class="flex items-center space-x-4">
-                <span><i class="fa-regular fa-clock mr-1 text-amber-400"></i> Sexta • 18:50 - 22:00</span>
-                <span><i class="fa-solid fa-location-dot mr-1 text-amber-400"></i> Sala C5 </span>
+                <span><i class="fa-regular fa-clock mr-1 text-amber-400"></i> Sex • 18:50 - 22:20</span>
+                <span><i class="fa-solid fa-location-dot mr-1 text-amber-400"></i> Sala do Departamento de História</span>
             </div>
         </div>
     </div>
 
-    <!-- Main Navigation Bar -->
+    <!-- Navigation Bar -->
     <header class="sticky top-0 z-40 bg-white/95 dark:bg-navy-900/95 backdrop-blur border-b border-academic-200 dark:border-navy-800 shadow-sm transition-colors">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 
-                <!-- Brand / Course Title -->
+                <!-- Brand / Title -->
                 <div class="flex items-center space-x-3 cursor-pointer" onclick="switchTab('dashboard')">
                     <div class="w-9 h-9 rounded bg-navy-900 dark:bg-gold-600 flex items-center justify-center text-amber-400 dark:text-navy-950 shadow-sm border border-gold-600/30">
                         <i class="fa-solid fa-book-atlas text-base"></i>
                     </div>
                     <div>
                         <span class="font-heading font-bold text-base sm:text-lg tracking-wide block text-navy-900 dark:text-amber-400 leading-none">HISTÓRIA MEDIEVAL</span>
-                        <span class="text-[11px] text-academic-700 dark:text-slate-400 block font-medium mt-0.5">Portal de Estudos & Repositório Didático</span>
+                        <span class="text-[11px] text-academic-700 dark:text-slate-400 block font-medium mt-0.5">Portal de Estudos & Leituras Obrigatórias</span>
                     </div>
                 </div>
 
-                <!-- Desktop Navigation Links -->
+                <!-- Desktop Links -->
                 <nav class="hidden md:flex items-center space-x-1 lg:space-x-2">
                     <button onclick="switchTab('dashboard')" id="nav-dashboard" class="nav-btn px-3 py-2 rounded text-xs font-semibold tracking-wide transition-colors hover:bg-academic-100 dark:hover:bg-navy-800 text-gold-600 dark:text-amber-400">
                         <i class="fa-solid fa-table-columns mr-1.5 opacity-70"></i>Visão Geral
                     </button>
-                    <button onclick="switchTab('syllabus')" id="nav-syllabus" class="nav-btn px-3 py-2 rounded text-xs font-semibold tracking-wide transition-colors hover:bg-academic-100 dark:hover:bg-navy-800 text-slate-600 dark:text-slate-300">
-                        <i class="fa-solid fa-list-ol mr-1.5 opacity-70"></i>Plano de Ensino
-                    </button>
                     <button onclick="switchTab('texts')" id="nav-texts" class="nav-btn px-3 py-2 rounded text-xs font-semibold tracking-wide transition-colors hover:bg-academic-100 dark:hover:bg-navy-800 text-slate-600 dark:text-slate-300">
-                        <i class="fa-solid fa-box-archive mr-1.5 opacity-70"></i>Textos & Fontes
+                        <i class="fa-solid fa-box-archive mr-1.5 opacity-70"></i>Biblioteca de Textos
                     </button>
                     <button onclick="switchTab('study')" id="nav-study" class="nav-btn px-3 py-2 rounded text-xs font-semibold tracking-wide transition-colors hover:bg-academic-100 dark:hover:bg-navy-800 text-slate-600 dark:text-slate-300">
                         <i class="fa-solid fa-graduation-cap mr-1.5 opacity-70"></i>Central de Revisão
+                    </button>
+                    <button onclick="switchTab('forum')" id="nav-forum" class="nav-btn px-3 py-2 rounded text-xs font-semibold tracking-wide transition-colors hover:bg-academic-100 dark:hover:bg-navy-800 text-slate-600 dark:text-slate-300">
+                        <i class="fa-solid fa-comments mr-1.5 opacity-70"></i>Fórum do Aluno
                     </button>
                     <button onclick="switchTab('notes')" id="nav-notes" class="nav-btn px-3 py-2 rounded text-xs font-semibold tracking-wide transition-colors hover:bg-academic-100 dark:hover:bg-navy-800 text-slate-600 dark:text-slate-300">
                         <i class="fa-solid fa-pen-ruler mr-1.5 opacity-70"></i>Caderno Digital
                     </button>
                 </nav>
 
-                <!-- Actions: Theme Toggle & Mobile Button -->
+                <!-- Actions -->
                 <div class="flex items-center space-x-2">
                     <button id="theme-toggle" onclick="toggleDarkMode()" class="p-2 rounded border border-academic-200 dark:border-navy-700 bg-academic-50 dark:bg-navy-800 text-slate-700 dark:text-slate-200 hover:bg-academic-100 dark:hover:bg-navy-700 transition" title="Alternar Modo Escuro">
                         <i class="fa-solid fa-moon text-xs dark:hidden"></i>
@@ -146,13 +146,10 @@
             </div>
         </div>
 
-        <!-- Mobile Navigation Menu -->
+        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden border-b border-academic-200 dark:border-navy-800 bg-white dark:bg-navy-900 px-4 py-3 space-y-1">
             <button onclick="switchTab('dashboard'); toggleMobileMenu();" class="w-full text-left px-3 py-2 rounded text-xs font-medium text-slate-700 dark:text-slate-200 hover:bg-academic-100 dark:hover:bg-navy-800 flex items-center">
                 <i class="fa-solid fa-table-columns w-6 text-gold-600"></i>Visão Geral
-            </button>
-            <button onclick="switchTab('syllabus'); toggleMobileMenu();" class="w-full text-left px-3 py-2 rounded text-xs font-medium text-slate-700 dark:text-slate-200 hover:bg-academic-100 dark:hover:bg-navy-800 flex items-center">
-                <i class="fa-solid fa-list-ol w-6 text-gold-600"></i>Plano de Ensino & Cronograma
             </button>
             <button onclick="switchTab('texts'); toggleMobileMenu();" class="w-full text-left px-3 py-2 rounded text-xs font-medium text-slate-700 dark:text-slate-200 hover:bg-academic-100 dark:hover:bg-navy-800 flex items-center">
                 <i class="fa-solid fa-box-archive w-6 text-gold-600"></i>Biblioteca de Textos
@@ -160,8 +157,11 @@
             <button onclick="switchTab('study'); toggleMobileMenu();" class="w-full text-left px-3 py-2 rounded text-xs font-medium text-slate-700 dark:text-slate-200 hover:bg-academic-100 dark:hover:bg-navy-800 flex items-center">
                 <i class="fa-solid fa-graduation-cap w-6 text-gold-600"></i>Central de Revisão
             </button>
+            <button onclick="switchTab('forum'); toggleMobileMenu();" class="w-full text-left px-3 py-2 rounded text-xs font-medium text-slate-700 dark:text-slate-200 hover:bg-academic-100 dark:hover:bg-navy-800 flex items-center">
+                <i class="fa-solid fa-comments w-6 text-gold-600"></i>Fórum de Dúvidas
+            </button>
             <button onclick="switchTab('notes'); toggleMobileMenu();" class="w-full text-left px-3 py-2 rounded text-xs font-medium text-slate-700 dark:text-slate-200 hover:bg-academic-100 dark:hover:bg-navy-800 flex items-center">
-                <i class="fa-solid fa-pen-ruler w-6 text-gold-600"></i> Fichamentos
+                <i class="fa-solid fa-pen-ruler w-6 text-gold-600"></i>Caderno Digital
             </button>
         </div>
     </header>
@@ -169,7 +169,7 @@
     <!-- Main Container -->
     <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
 
-        <!-- ================= TAB 1: DASHBOARD / OVERVIEW ================= -->
+        <!-- ================= TAB 1: DASHBOARD ================= -->
         <section id="section-dashboard" class="tab-content space-y-6">
             
             <!-- Faculty Header Card -->
@@ -178,248 +178,129 @@
                     <div class="space-y-2 max-w-3xl">
                         <div class="inline-flex items-center space-x-2 text-[11px] font-semibold text-gold-600 dark:text-amber-400 bg-amber-50 dark:bg-navy-800 px-2.5 py-0.5 rounded border border-amber-200 dark:border-amber-900/40">
                             <i class="fa-solid fa-university text-[10px]"></i>
-                            <span>Semestre Letivo 2026.2 • Graduação em História</span>
+                            <span>Graduação em História • Módulo Historiográfico</span>
                         </div>
                         <h1 class="font-heading text-2xl sm:text-3xl font-bold text-navy-900 dark:text-slate-100 tracking-tight">
-                            História Medieval:
+                            História Medieval: Novas Historiografias, Fronteiras e Globalidade
                         </h1>
                         <p class="font-serif text-base text-academic-700 dark:text-slate-300 leading-relaxed">
-                            Estudo crítico das transformações econômicas, sociais, culturais e políticas do mundo mediterrâneo e europeu entre a Desagregação do Império Romano (séc. V) e o Fechamento da Baixa Idade Média (séc. XV).
+                            Repositório central para leitura, análise historiográfica, fichamentos ABNT e estudos integrados sobre a Idade Média Global, a história do Mediterrâneo e a transição feudal.
                         </p>
                     </div>
 
-                    <!-- Faculty Info Sidebox -->
+                    <!-- Side info -->
                     <div class="bg-academic-50 dark:bg-navy-800/60 p-4 rounded border border-academic-200 dark:border-navy-700 text-xs space-y-2 lg:w-80 flex-shrink-0">
                         <div class="font-semibold text-navy-900 dark:text-slate-200 border-b border-academic-200 dark:border-navy-700 pb-1.5 flex items-center justify-between">
-                            <span>Corpo Docente</span>
-                            <i class="fa-solid fa-user-graduate text-slate-400"></i>
+                            <span>Informações</span>
+                            <i class="fa-solid fa-graduation-cap text-slate-400"></i>
                         </div>
                         <div>
-                            <p class="font-bold text-slate-800 dark:text-slate-200">Prof. Dr. Carlos Eduardo Martins Torcato</p>
-                            <p class="text-slate-500 text-[11px]">carlostorcato@uern.br</p>
+                            <p class="font-bold text-slate-800 dark:text-slate-200">CARLOS EDUARDO MARTINS TORCATO</p>
+                            <p class="text-slate-500 text-[11px]">Email: carlostorcato@uern.br</p>
                         </div>
                         <div class="pt-1 text-[11px] text-slate-600 dark:text-slate-300">
-                            <p><span class="font-semibold">Monitoria:</span> Maria Viviane Barbosa Silva (maria20230017140@alu.uern.br)</p>
+                            <p><span class="font-semibold">Monitora: </span>  Maria Viviane Barbosa Silva</p>
+                            <p><span class="font-semibold">Email: </span> maria20230017140@alu.uern.br</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Key Quick Stats -->
+            <!-- Quick Stats -->
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div class="bg-white dark:bg-navy-900 p-4 rounded border border-academic-200 dark:border-navy-800">
-                    <p class="text-[11px] font-medium text-slate-500 uppercase tracking-wider"> Leituras do Semestre</p>
-                    <p class="text-xl font-bold font-heading text-navy-900 dark:text-amber-400 mt-1">14 Textos</p>
-                    <p class="text-[10px] text-slate-400 mt-0.5">8 Obrigatórios / 6 Complementares</p>
+                    <p class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Leituras Selecionadas</p>
+                    <p class="text-xl font-bold font-heading text-navy-900 dark:text-amber-400 mt-1">4 Artigos/Capítulos</p>
+                    <p class="text-[10px] text-slate-400 mt-0.5">Perry Anderson, König, Bandeira & Menezes</p>
                 </div>
                 <div class="bg-white dark:bg-navy-900 p-4 rounded border border-academic-200 dark:border-navy-800">
-                    <p class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Próxima Avaliação</p>
-                    <p class="text-xl font-bold font-heading text-rose-700 dark:text-rose-400 mt-1">18/OUT - P1</p>
-                    <p class="text-[10px] text-slate-400 mt-0.5">Módulos I, II e Fontes Primárias</p>
+                    <p class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Próximo Seminário</p>
+                    <p class="text-xl font-bold font-heading text-rose-700 dark:text-rose-400 mt-1">24/OUT - Global Hist.</p>
+                    <p class="text-[10px] text-slate-400 mt-0.5">Debate de Historiografia Brasileira</p>
                 </div>
                 <div class="bg-white dark:bg-navy-900 p-4 rounded border border-academic-200 dark:border-navy-800">
-                    <p class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fichamentos Salvos</p>
+                    <p class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Seus Fichamentos</p>
                     <p id="dash-notes-count" class="text-xl font-bold font-heading text-navy-900 dark:text-amber-400 mt-1">0 Notas</p>
-                    <p class="text-[10px] text-slate-400 mt-0.5">Armazenados no Navegador</p>
+                    <p class="text-[10px] text-slate-400 mt-0.5">Salvos automaticamente no browser</p>
                 </div>
                 <div class="bg-white dark:bg-navy-900 p-4 rounded border border-academic-200 dark:border-navy-800">
-                    <p class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Fontes Traduzidas</p>
-                    <p class="text-xl font-bold font-heading text-navy-900 dark:text-amber-400 mt-1">4 Documentos</p>
-                    <p class="text-[10px] text-slate-400 mt-0.5">Análise documental guiada</p>
+                    <p class="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Formato de Citação</p>
+                    <p class="text-xl font-bold font-heading text-navy-900 dark:text-amber-400 mt-1">ABNT NBR 6023</p>
+                    <p class="text-[10px] text-slate-400 mt-0.5">Gerador em 1 clique</p>
                 </div>
             </div>
 
-            <!-- Two Column Layout: Announcements + Immediate Tasks -->
+            <!-- Two Column: Notices & Featured Text -->
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <!-- Left Column (2 Cols): Professor Notices -->
                 <div class="lg:col-span-2 space-y-6">
                     <div class="bg-white dark:bg-navy-900 rounded border border-academic-200 dark:border-navy-800 p-5 shadow-sm">
                         <div class="flex items-center justify-between border-b border-academic-200 dark:border-navy-800 pb-3 mb-4">
                             <h2 class="font-heading text-base font-bold text-navy-900 dark:text-slate-100 flex items-center gap-2">
                                 <i class="fa-solid fa-bullhorn text-gold-600 text-sm"></i>
-                                Comunicados Acadêmicos
+                                Quadros de Avisos & Monitoria
                             </h2>
                             <span class="text-[10px] font-semibold text-slate-500 uppercase">Mural Oficial</span>
                         </div>
 
                         <div class="space-y-4 text-xs">
-                            <!-- Notice 1 -->
                             <div class="p-3.5 bg-academic-50 dark:bg-navy-800/50 rounded border-l-2 border-gold-600 space-y-1">
                                 <div class="flex justify-between items-center text-slate-500 text-[11px]">
-                                    <span class="font-bold text-slate-800 dark:text-slate-200">Diretrizes para a Resenha Crítica de Marc Bloch</span>
-                                    <span>20 de Setembro</span>
+                                    <span class="font-bold text-slate-800 dark:text-slate-200">Orientações para o Fichamento de Perry Anderson</span>
+                                    <span>Esta semana</span>
                                 </div>
                                 <p class="text-slate-600 dark:text-slate-300 leading-relaxed font-serif text-sm">
-                                    Prezados discentes, no fichamento do capítulo de Marc Bloch (Texto 01), atentem-se para contrastar a visão de vassalagem com as interpretações historiográficas mais recentes de Susan Reynolds. O arquivo modelo ABNT está disponível no caderno digital.
+                                    Ao analisar o texto de Perry Anderson (<em>Europa Ocidental</em>), concentrem-se na tese da síntese entre o modo de produção escravista romano e o modo de produção germânico como gênese do feudalismo.
                                 </p>
                             </div>
 
-                            <!-- Notice 2 -->
                             <div class="p-3.5 bg-academic-50 dark:bg-navy-800/50 rounded border-l-2 border-navy-800 dark:border-slate-500 space-y-1">
                                 <div class="flex justify-between items-center text-slate-500 text-[11px]">
-                                    <span class="font-bold text-slate-800 dark:text-slate-200">Atendimento de Monitoria - Análise de Fontes</span>
-                                    <span>15 de Setembro</span>
+                                    <span class="font-bold text-slate-800 dark:text-slate-200">Debate: Idade Média Global na Historiografia Nacional</span>
+                                    <span>Próximo encontro</span>
                                 </div>
                                 <p class="text-slate-600 dark:text-slate-300 leading-relaxed font-serif text-sm">
-                                    A monitora Maria Viviane estará na sala de alunos nesta quinta-feira das 16h às 18h para tirar dúvidas de paleografia e interpretação sobre a Fonte Primária 01 (Eginardo - Vida de Carlos Magno).
+                                    Utilizem os artigos mais recentes de Nathalia Bandeira (2024) e Edilson Menezes Júnior (2025) para contrastar a historiografia eurocêntrica tradicional com os novos conceitos de territorialidade e história global.
                                 </p>
                             </div>
-                        </div>
-                    </div>
-
-                    <!-- Current Unit Module Banner -->
-                    <div class="bg-navy-900 text-white p-5 rounded border border-navy-800 space-y-3">
-                        <div class="flex justify-between items-center text-[11px] text-amber-400 font-semibold tracking-wider uppercase">
-                            <span>Unidade Atual do Curso</span>
-                            <span>Semanas 4 e 5</span>
-                        </div>
-                        <h3 class="font-heading text-lg font-bold text-amber-100">
-                            Módulo II: O Mundo Carolíngio e o Surgimento do Feudalismo
-                        </h3>
-                        <p class="text-xs text-slate-300 leading-relaxed font-serif">
-                            Foco nas estruturas senhoriais, na cristianização da Europa central, na relação entre reis francos e o papado, e na organização dos laços de vassalagem.
-                        </p>
-                        <div class="pt-2 flex gap-3">
-                            <button onclick="switchTab('texts')" class="px-3.5 py-1.5 bg-gold-600 hover:bg-gold-700 text-white font-semibold text-xs rounded transition">
-                                Ver Leituras do Módulo
-                            </button>
-                            <button onclick="switchTab('syllabus')" class="px-3.5 py-1.5 bg-navy-800 hover:bg-navy-700 text-slate-200 font-semibold text-xs rounded border border-navy-700 transition">
-                                Consultar Cronograma
-                            </button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Right Column (1 Col): Deadlines & Office Hours -->
                 <div class="space-y-6">
-                    <!-- Academic Deadlines -->
                     <div class="bg-white dark:bg-navy-900 rounded border border-academic-200 dark:border-navy-800 p-5 shadow-sm space-y-4">
                         <h2 class="font-heading text-sm font-bold text-navy-900 dark:text-slate-100 border-b border-academic-200 dark:border-navy-800 pb-2 flex items-center gap-2">
                             <i class="fa-regular fa-calendar-check text-gold-600"></i>
-                            Prazos & Entregas
+                            Prazos de Entrega
                         </h2>
                         <ul class="space-y-2.5 text-xs">
                             <li class="p-2.5 rounded bg-academic-50 dark:bg-navy-800 border border-academic-200 dark:border-navy-700 flex items-start space-x-3">
-                                <span class="bg-navy-900 text-amber-400 px-2 py-1 rounded font-bold text-[10px] font-heading flex-shrink-0">28/SEP</span>
+                                <span class="bg-navy-900 text-amber-400 px-2 py-1 rounded font-bold text-[10px] font-heading flex-shrink-0">30/OCT</span>
                                 <div>
-                                    <p class="font-semibold text-slate-800 dark:text-slate-200">Fichamento Obr. #1</p>
-                                    <p class="text-slate-500 text-[11px]">Marc Bloch - Capítulos I e II</p>
+                                    <p class="font-semibold text-slate-800 dark:text-slate-200">Fichamento ABNT #1</p>
+                                    <p class="text-slate-500 text-[11px]">Perry Anderson (pp. 151-202)</p>
                                 </div>
                             </li>
                             <li class="p-2.5 rounded bg-academic-50 dark:bg-navy-800 border border-academic-200 dark:border-navy-700 flex items-start space-x-3">
-                                <span class="bg-rose-900 text-rose-200 px-2 py-1 rounded font-bold text-[10px] font-heading flex-shrink-0">18/OCT</span>
+                                <span class="bg-gold-600 text-white px-2 py-1 rounded font-bold text-[10px] font-heading flex-shrink-0">15/NOV</span>
                                 <div>
-                                    <p class="font-semibold text-slate-800 dark:text-slate-200">Primeira Prova (U1)</p>
-                                    <p class="text-slate-500 text-[11px]">Valor: 7.0 pontos • Individual</p>
-                                </div>
-                            </li>
-                            <li class="p-2.5 rounded bg-academic-50 dark:bg-navy-800 border border-academic-200 dark:border-navy-700 flex items-start space-x-3">
-                                <span class="bg-navy-900 text-amber-400 px-2 py-1 rounded font-bold text-[10px] font-heading flex-shrink-0">12/NOV</span>
-                                <div>
-                                    <p class="font-semibold text-slate-800 dark:text-slate-200">Apresentação do Seminário</p>
-                                    <p class="text-slate-500 text-[11px]">Tema: As Cidades Medievais</p>
+                                    <p class="font-semibold text-slate-800 dark:text-slate-200">Resenha Comparativa</p>
+                                    <p class="text-slate-500 text-[11px]">König & Menezes Jr. (Mediterrâneo e Fronteiras)</p>
                                 </div>
                             </li>
                         </ul>
-                    </div>
-
-                    <!-- Recommended Study Process -->
-                    <div class="bg-academic-100 dark:bg-navy-800/80 p-4 rounded border border-academic-200 dark:border-navy-700 space-y-2 text-xs">
-                        <span class="font-bold text-navy-900 dark:text-amber-400 block uppercase text-[10px] tracking-wider">Dica Metodológica</span>
-                        <p class="text-slate-700 dark:text-slate-300 font-serif leading-relaxed">
-                            Ao ler as fontes primárias, diferencie sempre a perspectiva do autor medieval (ex: cronistas monásticos) das interpretações dos historiadores contemporâneos.
-                        </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ================= TAB 2: SYLLABUS / CRONOGRAMA ================= -->
-        <section id="section-syllabus" class="tab-content hidden space-y-6">
-            <div class="bg-white dark:bg-navy-900 p-6 rounded border border-academic-200 dark:border-navy-800 shadow-sm space-y-2">
-                <h1 class="font-heading text-xl font-bold text-navy-900 dark:text-slate-100">Plano de Ensino & Cronograma Semestral</h1>
-                <p class="font-serif text-sm text-slate-600 dark:text-slate-300">
-                    Acompanhe a distribuição temática das aulas, leituras prévias requeridas e datas de avaliações programadas.
-                </p>
-            </div>
-
-            <!-- Syllabus Weeks List -->
-            <div class="space-y-4">
-                
-                <!-- Semana Item 1 -->
-                <div class="bg-white dark:bg-navy-900 p-5 rounded border border-academic-200 dark:border-navy-800 shadow-sm space-y-3">
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-academic-200 dark:border-navy-800 pb-2">
-                        <div class="flex items-center space-x-2">
-                            <span class="px-2 py-0.5 bg-navy-900 text-amber-400 font-heading text-xs font-bold rounded">SEMANAS 1-2</span>
-                            <h3 class="font-heading text-base font-bold text-slate-800 dark:text-slate-100">A Transição da Antiguidade Tardia ao Medievo</h3>
-                        </div>
-                        <span class="text-xs font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 px-2 py-0.5 rounded"><i class="fa-solid fa-check mr-1"></i>Concluído</span>
-                    </div>
-                    <p class="text-xs text-slate-600 dark:text-slate-300 font-serif leading-relaxed">
-                        A crise do Império Romano do Ocidente, as migrações germânicas e a fusão de elementos romano-germânicos. A emergência dos reinos romano-germânicos com foco no Reino Franco.
-                    </p>
-                    <div class="bg-academic-50 dark:bg-navy-800 p-3 rounded text-xs space-y-1">
-                        <span class="font-bold text-slate-700 dark:text-slate-300">Leituras Associadas:</span>
-                        <ul class="list-disc list-inside text-slate-600 dark:text-slate-400 text-[11px] space-y-0.5">
-                            <li>Santo Agostinho – <em>De Civitate Dei</em> (Excertos seleccionados)</li>
-                            <li>Perry Anderson – <em>Passagens da Antiguidade ao Feudalismo</em> (Cap. 2)</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Semana Item 2 -->
-                <div class="bg-white dark:bg-navy-900 p-5 rounded border-2 border-gold-600/40 shadow-sm space-y-3">
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-academic-200 dark:border-navy-800 pb-2">
-                        <div class="flex items-center space-x-2">
-                            <span class="px-2 py-0.5 bg-gold-600 text-white font-heading text-xs font-bold rounded">SEMANAS 3-5</span>
-                            <h3 class="font-heading text-base font-bold text-slate-800 dark:text-slate-100">O Feudalismo e a Consolidação Senhorial</h3>
-                        </div>
-                        <span class="text-xs font-semibold text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/40 px-2 py-0.5 rounded"><i class="fa-solid fa-circle-dot mr-1"></i>Em Andamento</span>
-                    </div>
-                    <p class="text-xs text-slate-600 dark:text-slate-300 font-serif leading-relaxed">
-                        Conceituação de Feudalismo na historiografia. Laços de vassalagem, feudo, senhorio e servidão. O papel da Igreja Católica como instituição reguladora da sociedade feudal.
-                    </p>
-                    <div class="bg-academic-50 dark:bg-navy-800 p-3 rounded text-xs space-y-1">
-                        <span class="font-bold text-slate-700 dark:text-slate-300">Leituras Associadas:</span>
-                        <ul class="list-disc list-inside text-slate-600 dark:text-slate-400 text-[11px] space-y-0.5">
-                            <li>Marc Bloch – <em>A Sociedade Feudal</em> (Texto 01) - <strong>Fichamento Obrigatório</strong></li>
-                            <li>Georges Duby – <em>Guerreiros e Camponeses</em> (Cap. III)</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Semana Item 3 -->
-                <div class="bg-white dark:bg-navy-900 p-5 rounded border border-academic-200 dark:border-navy-800 shadow-sm space-y-3">
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-academic-200 dark:border-navy-800 pb-2">
-                        <div class="flex items-center space-x-2">
-                            <span class="px-2 py-0.5 bg-slate-200 dark:bg-navy-800 text-slate-700 dark:text-slate-300 font-heading text-xs font-bold rounded">SEMANAS 6-9</span>
-                            <h3 class="font-heading text-base font-bold text-slate-800 dark:text-slate-100">O Renascimento Urbano e as Crises da Baixa Idade Média</h3>
-                        </div>
-                        <span class="text-xs font-semibold text-slate-400 bg-slate-100 dark:bg-navy-800 px-2 py-0.5 rounded">Próximo Módulo</span>
-                    </div>
-                    <p class="text-xs text-slate-600 dark:text-slate-300 font-serif leading-relaxed">
-                        A expansão agrícola dos séculos XI-XIII, o renascimento comercial no Mediterrâneo e no Norte Europeu, as Corporações de Ofício. As grandes crises do século XIV: Peste Negra, fome e revoltas camponesas.
-                    </p>
-                    <div class="bg-academic-50 dark:bg-navy-800 p-3 rounded text-xs space-y-1">
-                        <span class="font-bold text-slate-700 dark:text-slate-300">Leituras Associadas:</span>
-                        <ul class="list-disc list-inside text-slate-600 dark:text-slate-400 text-[11px] space-y-0.5">
-                            <li>Henri Pirenne – <em>As Cidades do Medievo</em></li>
-                            <li>Jean Delumeau – <em>História do Medo no Ocidente</em></li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- ================= TAB 3: BIBLIOTECA DE TEXTOS ================= -->
+        <!-- ================= TAB 2: TEXTS LIBRARY ================= -->
         <section id="section-texts" class="tab-content hidden space-y-6">
             
             <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-white dark:bg-navy-900 p-6 rounded border border-academic-200 dark:border-navy-800 shadow-sm">
                 <div>
-                    <h1 class="font-heading text-xl font-bold text-navy-900 dark:text-slate-100">Repositório de Textos & Fontes Históricas</h1>
+                    <h1 class="font-heading text-xl font-bold text-navy-900 dark:text-slate-100">Biblioteca de Textos Indicados</h1>
                     <p class="font-serif text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-0.5">
-                        Acesse artigos historiográficos, capítulos de livros e fontes primárias traduzidas para leitura.
+                        Coletânea oficial de capítulos e artigos científicos disponibilizados para a disciplina.
                     </p>
                 </div>
                 <div class="flex items-center space-x-2">
@@ -430,95 +311,89 @@
                 </div>
             </div>
 
-            <!-- Controle de filtros -->
+            <!-- Filters -->
             <div class="bg-white dark:bg-navy-900 p-4 rounded border border-academic-200 dark:border-navy-800 shadow-sm space-y-3">
                 <div class="grid grid-cols-1 md:grid-cols-12 gap-3">
                     <div class="relative md:col-span-6">
                         <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-slate-400 text-xs"></i>
-                        <input type="text" id="search-input" oninput="filterTexts()" placeholder="Buscar por título, autor historiográfico ou tema..." class="w-full pl-8 pr-3 py-1.5 bg-academic-50 dark:bg-navy-950 border border-academic-200 dark:border-navy-800 rounded text-xs text-slate-800 dark:text-slate-100">
+                        <input type="text" id="search-input" oninput="filterTexts()" placeholder="Buscar por autor (Perry Anderson, König...), título ou conceito..." class="w-full pl-8 pr-3 py-1.5 bg-academic-50 dark:bg-navy-950 border border-academic-200 dark:border-navy-800 rounded text-xs text-slate-800 dark:text-slate-100">
                     </div>
 
                     <div class="md:col-span-3">
-                        <select id="period-filter" onchange="filterTexts()" class="w-full py-1.5 px-3 bg-academic-50 dark:bg-navy-950 border border-academic-200 dark:border-navy-800 rounded text-xs text-slate-800 dark:text-slate-100">
-                            <option value="ALL">Todas as Épocas</option>
-                            <option value="Alta Idade Média">Alta Idade Média (séc. V-X)</option>
-                            <option value="Baixa Idade Média">Baixa Idade Média (séc. XI-XV)</option>
-                            <option value="Antiguidade Tardia">Antiguidade Tardia</option>
+                        <select id="category-filter" onchange="filterTexts()" class="w-full py-1.5 px-3 bg-academic-50 dark:bg-navy-950 border border-academic-200 dark:border-navy-800 rounded text-xs text-slate-800 dark:text-slate-100">
+                            <option value="ALL">Todas as Categorias</option>
+                            <option value="Historiografia Clássica">Historiografia Clássica</option>
+                            <option value="Idade Média Global">Idade Média Global</option>
+                            <option value="História Global">História Global & Territorialidade</option>
+                            <option value="Mediterrâneo Medieval">Mediterrâneo Medieval</option>
                         </select>
                     </div>
 
                     <div class="md:col-span-3">
-                        <select id="type-filter" onchange="filterTexts()" class="w-full py-1.5 px-3 bg-academic-50 dark:bg-navy-950 border border-academic-200 dark:border-navy-800 rounded text-xs text-slate-800 dark:text-slate-100">
-                            <option value="ALL">Todos os Tipos</option>
-                            <option value="Historiografia">Historiografia / Artigo</option>
-                            <option value="Fonte Primária">Fonte Primária Traduzida</option>
-                            <option value="Manual">Manual Didático</option>
+                        <select id="tag-filter" onchange="filterTexts()" class="w-full py-1.5 px-3 bg-academic-50 dark:bg-navy-950 border border-academic-200 dark:border-navy-800 rounded text-xs text-slate-800 dark:text-slate-100">
+                            <option value="ALL">Todos os Marcadores</option>
+                            <option value="Obrigatória">Leitura Obrigatória</option>
+                            <option value="Recente">Produção Recente (2019-2025)</option>
                         </select>
                     </div>
                 </div>
             </div>
 
-            <!-- Texts Grid Display -->
-            <div id="texts-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                <!-- Javascript dynamic injection -->
+            <!-- Text Grid Container -->
+            <div id="texts-container" class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <!-- Javascript will render the 4 specific user texts dynamically -->
             </div>
 
-            <!-- Empty State -->
             <div id="texts-empty-state" class="hidden text-center py-12 bg-white dark:bg-navy-900 rounded border border-dashed border-academic-300 dark:border-navy-800 space-y-2">
                 <i class="fa-solid fa-folder-open text-3xl text-slate-400"></i>
-                <p class="font-semibold text-sm text-slate-700 dark:text-slate-200">Nenhum documento encontrado</p>
-                <p class="text-xs text-slate-500">Tente ajustar seus termos de pesquisa ou remover os filtros ativos.</p>
+                <p class="font-semibold text-sm text-slate-700 dark:text-slate-200">Nenhum texto encontrado com esses critérios</p>
+                <p class="text-xs text-slate-500">Ajuste o filtro ou digite outro nome de autor na busca.</p>
             </div>
         </section>
 
-        <!-- ================= TAB 4: CENTRAL DE ESTUDOS HISTORIOGRÁFICOS ================= -->
+        <!-- ================= TAB 3: REVISION & STUDY TOOLS ================= -->
         <section id="section-study" class="tab-content hidden space-y-6">
             
             <div class="bg-white dark:bg-navy-900 p-6 rounded border border-academic-200 dark:border-navy-800 shadow-sm space-y-1">
-                <h1 class="font-heading text-xl font-bold text-navy-900 dark:text-slate-100">Central de Estudos Historiográficos</h1>
+                <h1 class="font-heading text-xl font-bold text-navy-900 dark:text-slate-100">Central de Estudo & Revisão Historiográfica</h1>
                 <p class="font-serif text-xs sm:text-sm text-slate-600 dark:text-slate-300">
-                    Ferramentas didáticas para auxílio na fixação conceitual, revisão de vocabulário medieval e simulados de avaliação.
+                    Fixação dos conceitos centrais presentes na bibliografia indicada pelo professor.
                 </p>
             </div>
 
-            <!-- Navegação Central de Estudos Historiográficos -->
+            <!-- Subtab Switcher -->
             <div class="flex border-b border-academic-200 dark:border-navy-800 space-x-6 text-xs">
                 <button onclick="switchStudySubtab('flashcards')" id="subtab-btn-flashcards" class="pb-2 font-bold border-b-2 border-gold-600 text-gold-600 flex items-center gap-2">
                     <i class="fa-solid fa-layer-group"></i> Cartões de Conceitos
                 </button>
                 <button onclick="switchStudySubtab('quiz')" id="subtab-btn-quiz" class="pb-2 font-medium border-b-2 border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 flex items-center gap-2">
-                    <i class="fa-solid fa-circle-question"></i> Simulado da Prova
-                </button>
-                <button onclick="switchStudySubtab('glossary')" id="subtab-btn-glossary" class="pb-2 font-medium border-b-2 border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 flex items-center gap-2">
-                    <i class="fa-solid fa-book-bookmark"></i> Dicionário Histórico
+                    <i class="fa-solid fa-circle-question"></i> Simulado da Matéria
                 </button>
             </div>
 
-            <!-- SUBTAB 1: Flashcards -->
+            <!-- Flashcards Subtab -->
             <div id="subtab-flashcards" class="space-y-4">
-                <div class="max-w-lg mx-auto space-y-4">
+                <div class="max-w-xl mx-auto space-y-4">
                     <div class="flex justify-between items-center text-xs text-slate-500">
-                        <span id="flashcard-counter">Conceito 1 de 6</span>
-                        <span>Clique no cartão para alternar a vista</span>
+                        <span id="flashcard-counter">Conceito 1 de 4</span>
+                        <span>Clique no cartão para ver a resposta/definição</span>
                     </div>
 
-                    <!-- Flashcard element -->
                     <div id="flashcard" onclick="flipCard()" class="min-h-[220px] bg-white dark:bg-navy-900 border-2 border-academic-200 dark:border-navy-700 rounded-lg p-6 shadow-sm hover:shadow transition cursor-pointer flex flex-col justify-between text-center relative">
-                        <span id="flashcard-tag" class="text-[10px] font-bold text-gold-600 uppercase tracking-wider block">Termo Histórico</span>
+                        <span id="flashcard-tag" class="text-[10px] font-bold text-gold-600 uppercase tracking-wider block">Historiografia</span>
                         
                         <div class="my-auto py-4">
-                            <h3 id="flashcard-text" class="font-heading text-xl font-bold text-navy-900 dark:text-slate-100">
-                                Vassalagem
+                            <h3 id="flashcard-text" class="font-heading text-lg font-bold text-navy-900 dark:text-slate-100">
+                                Pergunta
                             </h3>
                             <p id="flashcard-subtext" class="font-serif text-sm text-slate-600 dark:text-slate-300 mt-2 hidden">
-                                Definição aqui...
+                                Resposta
                             </p>
                         </div>
 
-                        <span class="text-[10px] text-slate-400 italic"><i class="fa-solid fa-rotate mr-1"></i> Alternar vista frente/verso</span>
+                        <span class="text-[10px] text-slate-400 italic"><i class="fa-solid fa-rotate mr-1"></i> Alternar frente/verso</span>
                     </div>
 
-                    <!-- Flashcard Navigation -->
                     <div class="flex justify-between items-center">
                         <button onclick="prevCard()" class="px-3.5 py-1.5 bg-white dark:bg-navy-900 border border-academic-200 dark:border-navy-700 text-xs font-semibold rounded hover:bg-academic-50">
                             <i class="fa-solid fa-chevron-left mr-1"></i> Anterior
@@ -530,21 +405,20 @@
                 </div>
             </div>
 
-            <!-- SUBTAB 2: Quiz -->
+            <!-- Quiz Subtab -->
             <div id="subtab-quiz" class="hidden space-y-4">
                 <div class="max-w-2xl mx-auto bg-white dark:bg-navy-900 p-6 rounded border border-academic-200 dark:border-navy-800 shadow-sm space-y-6">
                     <div id="quiz-start-screen" class="text-center space-y-3 py-4">
                         <i class="fa-solid fa-file-pen text-3xl text-gold-600"></i>
-                        <h2 class="font-heading text-lg font-bold text-navy-900 dark:text-slate-100">Simulado de Preparação para a P1</h2>
+                        <h2 class="font-heading text-lg font-bold text-navy-900 dark:text-slate-100">Simulado de Questões com base na Bibliografia</h2>
                         <p class="font-serif text-xs text-slate-600 dark:text-slate-300 max-w-md mx-auto">
-                            Questões elaboradas nos moldes das avaliações do Departamento de História sobre os Módulos I e II.
+                            Questões fundamentadas nos textos de Perry Anderson, Daniel König, Nathalia Bandeira e Edilson Menezes Jr.
                         </p>
                         <button onclick="startQuiz()" class="px-5 py-2 bg-navy-900 dark:bg-gold-600 text-amber-400 dark:text-navy-950 font-bold text-xs rounded transition">
-                            Iniciar Questões
+                            Iniciar Simulado
                         </button>
                     </div>
 
-                    <!-- Active Quiz -->
                     <div id="quiz-active-screen" class="hidden space-y-4">
                         <div class="flex justify-between items-center text-xs border-b border-academic-200 dark:border-navy-800 pb-2">
                             <span id="quiz-progress" class="font-bold text-navy-900 dark:text-amber-400">Questão 1</span>
@@ -555,9 +429,7 @@
                             Pergunta...
                         </h3>
 
-                        <div id="quiz-options-container" class="space-y-2">
-                            <!-- Dynamic Options -->
-                        </div>
+                        <div id="quiz-options-container" class="space-y-2"></div>
 
                         <div id="quiz-feedback" class="hidden p-3 rounded text-xs font-serif leading-relaxed"></div>
 
@@ -568,7 +440,6 @@
                         </div>
                     </div>
 
-                    <!-- Quiz Result -->
                     <div id="quiz-result-screen" class="hidden text-center space-y-3 py-4">
                         <h2 class="font-heading text-lg font-bold">Resultado do Simulado</h2>
                         <p id="quiz-final-score" class="font-serif text-sm text-slate-700 dark:text-slate-300">Você acertou X de Y.</p>
@@ -576,32 +447,68 @@
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- SUBTAB 3: Dicionário -->
-            <div id="subtab-glossary" class="hidden space-y-4">
-                <div class="relative max-w-sm">
-                    <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-slate-400 text-xs"></i>
-                    <input type="text" id="glossary-search" oninput="filterGlossary()" placeholder="Filtrar termo historiográfico..." class="w-full pl-8 pr-3 py-1.5 bg-white dark:bg-navy-900 border border-academic-200 dark:border-navy-800 rounded text-xs">
+        <!-- ================= TAB 4: STUDENT FORUM ================= -->
+        <section id="section-forum" class="tab-content hidden space-y-6">
+            <div class="bg-white dark:bg-navy-900 p-6 rounded border border-academic-200 dark:border-navy-800 shadow-sm space-y-1">
+                <h1 class="font-heading text-xl font-bold text-navy-900 dark:text-slate-100">Fórum de Dúvidas & Debates Historiográficos</h1>
+                <p class="font-serif text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+                    Espaço colaborativo para troca de ideias, dúvidas sobre os textos e formação de grupos de estudo.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Post Question Form -->
+                <div class="bg-white dark:bg-navy-900 p-5 rounded border border-academic-200 dark:border-navy-800 shadow-sm space-y-4">
+                    <h2 class="font-heading text-sm font-bold border-b border-academic-200 dark:border-navy-800 pb-2">Nova Publicação</h2>
+                    <div class="space-y-3 text-xs">
+                        <div>
+                            <label class="block font-semibold text-slate-700 dark:text-slate-300 mb-1">Seu Nome / Matrícula</label>
+                            <input type="text" id="forum-author-input" placeholder="Ex: Lucas (Graduando)" class="w-full p-2 bg-academic-50 dark:bg-navy-950 border border-academic-200 dark:border-navy-800 rounded">
+                        </div>
+                        <div>
+                            <label class="block font-semibold text-slate-700 dark:text-slate-300 mb-1">Texto Referenciado</label>
+                            <select id="forum-text-select" class="w-full p-2 bg-academic-50 dark:bg-navy-950 border border-academic-200 dark:border-navy-800 rounded">
+                                <option value="Geral">Dúvida Geral da Matéria</option>
+                                <option value="Perry Anderson">Perry Anderson - Europa Ocidental</option>
+                                <option value="Nathalia Bandeira">Nathalia Bandeira - Idade Média Global</option>
+                                <option value="Edilson Menezes Jr.">Edilson Menezes Jr. - Fronteiras</option>
+                                <option value="Daniel König">Daniel König - Mediterrâneo Medieval</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block font-semibold text-slate-700 dark:text-slate-300 mb-1">Título do Tópico</label>
+                            <input type="text" id="forum-title-input" placeholder="Ex: Tese da síntese em Perry Anderson" class="w-full p-2 bg-academic-50 dark:bg-navy-950 border border-academic-200 dark:border-navy-800 rounded">
+                        </div>
+                        <div>
+                            <label class="block font-semibold text-slate-700 dark:text-slate-300 mb-1">Mensagem ou Dúvida</label>
+                            <textarea id="forum-body-input" rows="4" placeholder="Escreva aqui seu comentário ou ponto para debate..." class="w-full p-2 bg-academic-50 dark:bg-navy-950 border border-academic-200 dark:border-navy-800 rounded font-serif"></textarea>
+                        </div>
+                        <button onclick="addForumPost()" class="w-full py-2 bg-navy-900 dark:bg-gold-600 text-amber-400 dark:text-navy-950 font-bold rounded hover:opacity-90 transition">
+                            Publicar no Fórum
+                        </button>
+                    </div>
                 </div>
 
-                <div id="glossary-list" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <!-- Dynamic Glossaries -->
+                <!-- Posts Feed -->
+                <div class="lg:col-span-2 space-y-4" id="forum-posts-container">
+                    <!-- Dynamic Forum Posts -->
                 </div>
             </div>
         </section>
 
-        <!-- ================= TAB 5: FICHAMENTOS ================= -->
+        <!-- ================= TAB 5: PERSONAL NOTES ================= -->
         <section id="section-notes" class="tab-content hidden space-y-6">
             
             <div class="bg-white dark:bg-navy-900 p-6 rounded border border-academic-200 dark:border-navy-800 shadow-sm space-y-1">
                 <h1 class="font-heading text-xl font-bold text-navy-900 dark:text-slate-100">Caderno Digital de Fichamentos</h1>
                 <p class="font-serif text-xs sm:text-sm text-slate-600 dark:text-slate-300">
-                    Escreva sínteses dos textos lidos, citações importantes e rascunhos de trabalhos acadêmicos. Salvo localmente.
+                    Escreva sínteses dos capítulos lidos, citações e rascunhos acadêmicos. Salvo no seu navegador.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <!-- Sidebar Note List -->
                 <div class="bg-white dark:bg-navy-900 p-4 rounded border border-academic-200 dark:border-navy-800 space-y-3">
                     <button onclick="createNewNote()" class="w-full py-2 bg-gold-600 hover:bg-gold-700 text-white font-semibold text-xs rounded transition flex items-center justify-center gap-1.5">
                         <i class="fa-solid fa-plus"></i> Novo Fichamento
@@ -611,21 +518,20 @@
                     </div>
                 </div>
 
-                <!-- Main Note Editor -->
                 <div class="lg:col-span-2 bg-white dark:bg-navy-900 p-6 rounded border border-academic-200 dark:border-navy-800 shadow-sm space-y-4">
-                    <input type="text" id="note-title-input" placeholder="Título do Fichamento (ex: Marc Bloch - Cap. 1)" class="w-full font-heading font-bold text-base bg-transparent border-b border-academic-200 dark:border-navy-700 pb-2 text-slate-800 dark:text-slate-100">
+                    <input type="text" id="note-title-input" placeholder="Título do Fichamento (Ex: Fichamento - Perry Anderson)" class="w-full font-heading font-bold text-base bg-transparent border-b border-academic-200 dark:border-navy-700 pb-2 text-slate-800 dark:text-slate-100">
                     
                     <div class="flex gap-2 text-[11px] text-slate-500 font-semibold">
-                        <button onclick="insertNoteTemplate('abnt')" class="px-2 py-1 bg-academic-100 dark:bg-navy-800 rounded hover:bg-academic-200">+ Inserir Estrutura ABNT</button>
-                        <button onclick="insertNoteTemplate('quote')" class="px-2 py-1 bg-academic-100 dark:bg-navy-800 rounded hover:bg-academic-200">+ Bloco de Citação</button>
+                        <button onclick="insertNoteTemplate('abnt')" class="px-2 py-1 bg-academic-100 dark:bg-navy-800 rounded hover:bg-academic-200">+ Estrutura ABNT</button>
+                        <button onclick="insertNoteTemplate('quote')" class="px-2 py-1 bg-academic-100 dark:bg-navy-800 rounded hover:bg-academic-200">+ Bloco Citação Direta</button>
                     </div>
 
-                    <textarea id="note-body-input" rows="12" placeholder="Digite aqui suas anotações, síntese do capítulo, teses do autor e citações diretas..." class="w-full p-3 bg-academic-50 dark:bg-navy-950 border border-academic-200 dark:border-navy-800 rounded font-serif text-sm leading-relaxed text-slate-800 dark:text-slate-200"></textarea>
+                    <textarea id="note-body-input" rows="12" placeholder="Digite aqui suas anotações, síntese do texto, teses do autor e citações com número da página..." class="w-full p-3 bg-academic-50 dark:bg-navy-950 border border-academic-200 dark:border-navy-800 rounded font-serif text-sm leading-relaxed text-slate-800 dark:text-slate-200"></textarea>
 
                     <div class="flex justify-between items-center pt-2">
-                        <span class="text-[11px] text-slate-400"><i class="fa-solid fa-floppy-disk mr-1"></i> Alterações salvas no seu navegador</span>
+                        <span class="text-[11px] text-slate-400"><i class="fa-solid fa-floppy-disk mr-1"></i> Salvo automaticamente no navegador</span>
                         <button onclick="deleteCurrentNote()" class="px-3 py-1 bg-rose-100 dark:bg-rose-950 text-rose-700 dark:text-rose-300 rounded text-xs font-semibold hover:bg-rose-200 transition">
-                            Excluir Nota
+                            Excluir Fichamento
                         </button>
                     </div>
                 </div>
@@ -634,208 +540,169 @@
 
     </main>
 
-    <!-- Reader & Citation Modal -->
+    <!-- Reader / ABNT Modal -->
     <div id="reader-modal" class="fixed inset-0 z-50 hidden bg-navy-950/70 backdrop-blur-sm flex items-center justify-center p-4">
         <div class="bg-white dark:bg-navy-900 w-full max-w-3xl rounded border border-academic-200 dark:border-navy-800 shadow-xl max-h-[90vh] flex flex-col overflow-hidden">
-            <!-- Modal Header -->
             <div class="p-5 border-b border-academic-200 dark:border-navy-800 flex justify-between items-start bg-academic-50 dark:bg-navy-900">
                 <div class="space-y-1">
-                    <span id="modal-period-badge" class="px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-amber-100 dark:bg-navy-800 text-amber-800 dark:text-amber-400">Módulo</span>
+                    <span id="modal-category-badge" class="px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-amber-100 dark:bg-navy-800 text-amber-800 dark:text-amber-400">Categoria</span>
                     <h2 id="modal-title" class="font-heading text-lg font-bold text-navy-900 dark:text-slate-100">Título do Texto</h2>
-                    <p id="modal-author" class="text-xs text-slate-500 font-medium">Referência Historiográfica</p>
+                    <p id="modal-author" class="text-xs text-slate-500 font-medium">Autor / Referência</p>
                 </div>
                 <button onclick="closeReaderModal()" class="text-slate-400 hover:text-slate-600 p-1">
                     <i class="fa-solid fa-xmark text-lg"></i>
                 </button>
             </div>
 
-            <!-- Modal Content Body -->
             <div class="p-6 overflow-y-auto space-y-4 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
-                <!-- ABNT Reference Card -->
                 <div class="p-3 bg-academic-50 dark:bg-navy-800/60 rounded border border-academic-200 dark:border-navy-700 space-y-1">
                     <div class="flex justify-between items-center text-[10px] font-bold text-slate-500 uppercase">
-                        <span>Citação ABNT Recomendada</span>
-                        <button onclick="copyABNTReference()" class="text-gold-600 hover:underline"><i class="fa-regular fa-copy"></i> Copiar</button>
+                        <span>Referência Bibliográfica Completa (ABNT)</span>
+                        <button onclick="copyABNTReference()" class="text-gold-600 hover:underline"><i class="fa-regular fa-copy"></i> Copiar Citação</button>
                     </div>
-                    <p id="modal-abnt" class="font-serif text-xs italic text-slate-800 dark:text-slate-200">Referência completa...</p>
+                    <p id="modal-abnt" class="font-serif text-xs font-semibold text-slate-800 dark:text-slate-200">Referência ABNT...</p>
                 </div>
 
-                <!-- Abstract / Summary -->
                 <div class="space-y-1">
-                    <h4 class="font-bold text-xs uppercase text-slate-500">Resumo Acadêmico</h4>
+                    <h4 class="font-bold text-xs uppercase text-slate-500">Resumo Historiográfico</h4>
                     <p id="modal-summary" class="font-serif leading-relaxed text-slate-700 dark:text-slate-300">
                         Resumo do texto...
                     </p>
                 </div>
 
-                <!-- Text Sample / Key Excerpt -->
                 <div class="space-y-1 border-t border-academic-200 dark:border-navy-800 pt-3">
-                    <h4 class="font-bold text-xs uppercase text-slate-500">Excerto Selecionado para Leitura</h4>
+                    <h4 class="font-bold text-xs uppercase text-slate-500">Excerto Selecionado para Estudo</h4>
                     <blockquote id="modal-excerpt" class="p-3 bg-academic-50 dark:bg-navy-950 border-l-2 border-gold-600 font-serif italic text-xs leading-relaxed text-slate-800 dark:text-slate-200">
-                        "Citação..."
+                        "Trecho do texto..."
                     </blockquote>
                 </div>
             </div>
 
-            <!-- Modal Footer Controls -->
             <div class="p-4 border-t border-academic-200 dark:border-navy-800 flex justify-between items-center bg-academic-50 dark:bg-navy-950 text-xs">
                 <button id="modal-bookmark-btn" onclick="" class="font-semibold text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
                     <i class="fa-regular fa-bookmark text-gold-600"></i> Favoritar Leitura
                 </button>
-                <a id="modal-download-btn" href="#" target="_blank" onclick="alert('Iniciando o download do arquivo em formato PDF.')" class="px-4 py-2 bg-navy-900 dark:bg-gold-600 text-white dark:text-navy-950 font-bold rounded flex items-center gap-2">
-                    <i class="fa-solid fa-file-pdf"></i> Baixar PDF (Arquivo do Aluno)
-                </a>
+                <button onclick="openNoteForText()" class="px-4 py-2 bg-navy-900 dark:bg-gold-600 text-white dark:text-navy-950 font-bold rounded flex items-center gap-2">
+                    <i class="fa-solid fa-pen"></i> Iniciar Fichamento no Caderno
+                </button>
             </div>
         </div>
     </div>
 
+    <!-- Footer -->
     <footer class="bg-white dark:bg-navy-900 border-t border-academic-200 dark:border-navy-800 py-6 mt-auto">
         <div class="max-w-7xl mx-auto px-4 text-center text-xs text-slate-500 space-y-1">
-            <p class="font-heading font-bold text-slate-700 dark:text-slate-300">HISTÓRIA MEDIEVAL • DEPARTAMENTO DE HISTÓRIA - DHI</p>
-            <p>Plataforma de disponibilização de materiais didáticos para estudantes de graduação.</p>
+            <p class="font-heading font-bold text-slate-700 dark:text-slate-300">HISTÓRIA MEDIEVAL • REPOSITÓRIO ACADÊMICO</p>
+            <p>Universidade do Estado do Rio Grande do Norte.</p>
         </div>
     </footer>
 
     <script>
-        /* ================= AUTHENTIC ACADEMIC DATA ================= */
+        /* ================= EXACT 4 USER TEXTS DATA ================= */
         const textsData = [
             {
-                id: "txt-1",
-                title: "A Sociedade Feudal",
-                author: "BLOCH, Marc",
-                period: "Alta Idade Média",
-                type: "Historiografia",
-                pages: "48 págs",
-                abnt: "BLOCH, Marc. A Sociedade Feudal. Tradução de Laurent de Saes. São Paulo: Edições 70, 2021.",
-                summary: "Análise fundamental da Escola dos Annales sobre os laços de dependência de homem para homem, a estrutura das laços de vassalagem e a formação dos feudos no Ocidente europeu.",
-                excerpt: "A sociedade feudal caracterizou-se por um escassíssimo desenvolvimento do comércio e da circulação monetária; por uma nítida supremacia da terra como fonte de riqueza e de poder político...",
-                tags: ["Obrigatória", "Feudalismo", "Vassalagem"]
+                id: "txt-anderson",
+                title: "Europa Ocidental",
+                author: "ANDERSON, Perry",
+                category: "Historiografia Clássica",
+                pages: "pp. 151-202",
+                abnt: "ANDERSON, Perry. Europa Ocidental. In: Passagens da antiguidade ao feudalismo. São Paulo: Brasiliense, 2000, p.151-202.",
+                summary: "Capítulo clássico em que Perry Anderson analisa a transição do modo de produção escravista greco-romano ao modo de produção feudal na Europa Ocidental. O autor argumenta que o feudalismo foi o resultado de uma síntese catastrófica e criativa entre as estruturas romanas em dissolução e as instituições das tribos germânicas invasoras.",
+                excerpt: "O modo de produção feudal que emergiu na Europa ocidental durante a Idade Média foi o resultado de uma fusão entre os modos de produção romano e germânico... A síntese destas duas heranças produziu uma estrutura socioeconômica inédita calcada no feudo e na vassalagem.",
+                tags: ["Obrigatória", "Feudalismo", "Séc. XX"],
+                isBookmarked: false
             },
             {
-                id: "txt-2",
-                title: "A Civilização do Ocidente Medieval",
-                author: "LE GOFF, Jacques",
-                period: "Alta Idade Média",
-                type: "Manual",
-                pages: "112 págs",
-                abnt: "LE GOFF, Jacques. A Civilização do Ocidente Medieval. Lisboa: Estampa, 1995.",
-                summary: "Exame das estruturas materiais, da cultura letrada e do imaginário medieval, abordando a organização espacial e o papel da Igreja na mediação social.",
-                excerpt: "O homem medieval vive num mundo de símbolos e prodígios. A natureza não é apenas o que se vê, mas o sinal de uma realidade espiritual subjacente...",
-                tags: ["Obrigatória", "Mentalidades", "Igreja"]
+                id: "txt-bandeira",
+                title: "O impacto da Idade Média Global na historiografia brasileira (2016-2024)",
+                author: "BANDEIRA, Nathalia Marques",
+                category: "Idade Média Global",
+                pages: "pp. 486–517",
+                abnt: "BANDEIRA, Nathalia Marques. O impacto da Idade Média Global na historiografia brasileira (2016-2024). Temporalidades – Revista de História, v. 16, n. 1, p. 486–517, 2024.",
+                summary: "Exame historiográfico da recepção e apropriação do paradigma da 'Idade Média Global' pelos medievistas brasileiros entre 2016 e 2024. Analisa a superação da visão estritamente eurocêntrica e a renovação das pesquisas acadêmicas no Brasil através de abordagens conectadas e transregionais.",
+                excerpt: "A emergência da 'Global Middle Ages' ofereceu à historiografia brasileira um referencial teórico capaz de descentralizar o continente europeu, permitindo analisar dinâmicas de conexão, redes de troca no Índico e a circulação de saberes sem reducionismos nacionalistas.",
+                tags: ["Obrigatória", "Recente", "Historiografia Br"],
+                isBookmarked: false
             },
             {
-                id: "txt-3",
-                title: "Vida de Carlos Magno (Vita Karoli Magni)",
-                author: "EGINARDO (Séc. IX)",
-                period: "Alta Idade Média",
-                type: "Fonte Primária",
-                pages: "22 págs",
-                abnt: "EGINARDO. Vita Karoli Magni: A Vida de Carlos Magno. Tradução e notas de Paulo R. Andrade. Rio de Janeiro: Vozes, 2012.",
-                summary: "Biografia do imperador franco escrita por seu conselheiro na tradição historiográfica de Suetônio. Documento essencial para a compreensão do Império Carolíngio.",
-                excerpt: "Carlos era de corpo robusto e forte, de estatura elevada, sem contudo exceder a justa medida... Dedicava-se com zelo às artes liberais e honrava sobremaneira os acadêmicos...",
-                tags: ["Fonte Primária", "Carolíngios", "Império"]
+                id: "txt-menezes",
+                title: "Fronteiras na Idade Média: repensando a territorialidade a partir da história global",
+                author: "MENEZES JÚNIOR, Edilson Alves de",
+                category: "História Global",
+                pages: "pp. 106-124",
+                abnt: "MENEZES JÚNIOR, Edilson Alves de. Fronteiras na Idade Média: repensando a territorialidade a partir da história global. Revista Horizontes Históricos, v. 10, n. 1, p. 106-124, 2025.",
+                summary: "Reflexão teórica que problematiza o conceito rígido de fronteira estatal moderno projetado anacronicamente sobre o medievo. O autor propõe repensar as territorialidades medievais a partir da História Global, enfatizando zonas de contato, fluidez cultural e espaços de alteridade flexíveis.",
+                excerpt: "Longe de limites lineares e cartograficamente definidos, as fronteiras medievais operavam como zonas dinâmicas de interação, nas quais a territorialidade era moldada por lealdades pessoais, redes religiosas e zonas de transição porosas.",
+                tags: ["Obrigatória", "Recente", "Territorialidade"],
+                isBookmarked: false
             },
             {
-                id: "txt-4",
-                title: "Guerreiros e Camponeses (1020-1220)",
-                author: "DUBY, Georges",
-                period: "Baixa Idade Média",
-                type: "Historiografia",
-                pages: "64 págs",
-                abnt: "DUBY, Georges. Guerreiros e Camponeses: Os primeiros desenvolvimentos da economia europeia. Lisboa: Estampa, 1993.",
-                summary: "Estudo sobre o crescimento demográfico, o progresso técnico na agricultura e a consolidação do senhorio banal na Europa Ocidental.",
-                excerpt: "O motor da expansão econômica medieval residia na capacidade dos senhores extorquirem o excedente camponês para o consumo ostentatório e para a guerra...",
-                tags: ["Obrigatória", "Economia", "Senhorio"]
-            },
-            {
-                id: "txt-5",
-                title: "De Civitate Dei (A Cidade de Deus - Livro XIX)",
-                author: "SANTO AGOSTINHO (Séc. V)",
-                period: "Antiguidade Tardia",
-                type: "Fonte Primária",
-                pages: "30 págs",
-                abnt: "AGOSTINHO, Santo. A Cidade de Deus. Tradução de J. Oliveira. São Paulo: Paulus, 2002.",
-                summary: "Texto teológico fundamental articulando a relação entre a ordem política terrena e o reino celestial no contexto do saque de Roma em 410.",
-                excerpt: "Dois amores fundaram duas cidades: o amor próprio até ao desprezo de Deus, a cidade terrestre; o amor de Deus até ao desprezo de si mesmo, a cidade celeste...",
-                tags: ["Fonte Primária", "Patrística", "Teologia"]
-            },
-            {
-                id: "txt-6",
-                title: "As Cidades do Medievo",
-                author: "PIRENNE, Henri",
-                period: "Baixa Idade Média",
-                type: "Historiografia",
-                pages: "50 págs",
-                abnt: "PIRENNE, Henri. As Cidades do Medievo. Lisboa: Publicações Dom Quixote, 1989.",
-                summary: "A influente tese de Pirenne sobre o impacto da expansão islâmica no comércio mediterrâneo e o posterior surgimento da burguesia urbana.",
-                excerpt: "Sem a expansão do Islã, o Império de Carlos Magno não teria tido o caráter fechado e predominantemente terrestre que o caracterizou...",
-                tags: ["Complementar", "Comércio", "Cidades"]
+                id: "txt-konig",
+                title: "Conceitualizando a história do Mediterrâneo: perspectivas medievalísticas sobre uma categoria multifacetada",
+                author: "KÖNIG, Daniel",
+                category: "Mediterrâneo Medieval",
+                pages: "pp. 15-58",
+                abnt: "KÖNIG, Daniel. Conceitualizando a história do Mediterrâneo: perspectivas medievalísticas sobre uma categoria multifacetada. In: ALMEIDA, Néri de Barros; TORRE, Robson Della (Orgs.). O Mediterrâneo Medieval Considerado. Campinas, SP: Editora da UNICAMP, 2019, p.15-58.",
+                summary: "Análise crítica das diversas abordagens historiográficas que tentaram conceituar o Mediterrâneo no período medieval. Discussão da herança de Fernand Braudel, contrapontos com o mundo islâmico e bizantino e os desafios de encarar a bacia mediterrânea como barreira e como ponte de trocas intelectuais e materiais.",
+                excerpt: "Estudar o Mediterrâneo medieval exige desconstruir a dualidade simplista entre Cristandade e Islã, compreendendo este espaço marinho como uma zona complexa de simultânea rivalidade política, simbiose mercantil e tradução cultural.",
+                tags: ["Obrigatória", "Recente", "Mediterrâneo"],
+                isBookmarked: false
             }
         ];
 
         const flashcardsData = [
             {
-                term: "Vassalagem",
-                tag: "Instituição Político-Militar",
-                def: "Laço de fidelidade interpessoal estabelecido entre dois nobres (Suserano e Vassalo), formalizado no ritual de Homenagem e Investidura, implicando auxílio militar e conselho."
+                term: "Síntese Romano-Germânica (Perry Anderson)",
+                tag: "Historiografia Clássica",
+                def: "Tese segundo a qual o modo de produção feudal resultou da fusão entre a crise do escravismo romano e as estruturas tribais e comunais dos povos germânicos."
             },
             {
-                term: "Senhorio Banal",
-                tag: "Estrutura Socioeconômica",
-                def: "Exercício do poder de comando (bannum) por parte do senhor feudal sobre todos os habitantes de seu território, permitindo a cobrança de banalidades e multas judiciais."
+                term: "Idade Média Global (Nathalia Bandeira)",
+                tag: "Giro Historiográfico",
+                def: "Perspectiva analítica que descentraliza a Europa ocidental, conectando dinâmicas medievais com a Ásia, África e as redes transcontinentais no período."
             },
             {
-                term: "Corveia",
-                tag: "Obrigação Servil",
-                def: "Prestação de trabalho gratuito e obrigatório realizada pelos servos na reserva senhorial (manso senhorial) durante determinados dias da semana."
+                term: "Fronteira Porosa / Zona de Contato (Menezes Jr.)",
+                tag: "Territorialidade",
+                def: "Conceito que substitui a noção anacrônica de limites estatais fixos na Idade Média por regiões dinâmicas de transição, troca e negociação de identidades."
             },
             {
-                term: "Trivium e Quadrivium",
-                tag: "Educação Medieval",
-                def: "A estrutura das Artes Liberais: Trivium (Gramática, Retórica, Dialética) e Quadrivium (Aritmética, Geometria, Astronomia, Música)."
-            },
-            {
-                term: "Paz de Deus (Pax Dei)",
-                tag: "Igreja e Sociedade",
-                def: "Movimento liderado pelos bispos nos séculos X-XI visando proibir ações armadas contra não-combatentes (camponeses, clérigos) e propriedades da Igreja."
+                term: "Mediterrâneo Multifacetado (Daniel König)",
+                tag: "História Marítima",
+                def: "Visão do mar Mediterrâneo não como fronteira religiosa impermeável, mas como espaço de coexistência, intercâmbio comercial e tradução de saberes entre latinos, bizantinos e árabes."
             }
         ];
 
         const quizQuestions = [
             {
-                q: "Segundo a conceituação clássica de Marc Bloch, qual elemento era central nas relações feudais de vassalagem?",
+                q: "Qual é o argumento central de Perry Anderson no capítulo 'Europa Ocidental' sobre a formação do feudalismo?",
                 options: [
-                    "A compra e venda de títulos por moeda corrente",
-                    "A reciprocidade de obrigações entre nobres selada pelo juramento",
-                    "A submissão total do nobre vassalo à autoridade do rei",
-                    "O trabalho direto do vassalo na produção agrícola"
+                    "O feudalismo foi uma cópia exata do Império Bizantino",
+                    "Surgiu de uma síntese entre o modo de produção escravista romano e as estruturas germânicas",
+                    "Foi originado exclusivamente pela introdução do dinheiro na Baixa Idade Média",
+                    "Resultou unicamente das invasões vikings do século IX"
                 ],
                 correct: 1,
-                explanation: "Marc Bloch destaca que a vassalagem era uma relação de obrigações mútuas entre nobres (auxilium e consilium), mantendo o caráter de dependência honrosa."
+                explanation: "Perry Anderson argumenta que a dissolução do escravismo romano aliada à decomposição do modo de produção germânico gerou a síntese feudal."
             },
             {
-                q: "Qual foi a principal tese defendida por Henri Pirenne sobre a transição para a Idade Média?",
+                q: "Segundo o artigo de Nathalia Marques Bandeira (2024), qual o principal ganho da 'Idade Média Global' para a historiografia brasileira?",
                 options: [
-                    "A queda de Roma foi causada exclusivamente pela Peste Negra",
-                    "A expansão islâmica no Mediterrâneo rompeu as rotas comerciais e fechou a economia europeia",
-                    "O feudalismo nasceu no século XV com as corporações de ofício",
-                    "As invasões germânicas não causaram nenhum impacto na economia europeia"
+                    "Abandonar totalmente o estudo da história europeia nas faculdades",
+                    "Superar visões estritamente eurocêntricas e analisar conexões e redes globais no medievo",
+                    "Provado que o Brasil já existia no século VIII",
+                    "Limitar os estudos medievais à história do direito português"
                 ],
                 correct: 1,
-                explanation: "A conhecida 'Tese de Pirenne' postula que o fechamento do Mediterrâneo pelo Islã deslocou o eixo da Europa para o norte carolíngio."
+                explanation: "A autora demonstra que a Idade Média Global permite aos pesquisadores brasileiros descentralizar a Europa e examinar dinâmicas transregionais."
             }
         ];
 
-        const glossaryTerms = [
-            { term: "Banalidade", desc: "Taxa cobrada pelo senhor feudal pela utilização obrigatória das suas instalações (moinho, forno, prensa)." },
-            { term: "Manso Servil", desc: "Parcela de terra explorada pela família servil para a sua própria subsistência, sujeita a tributos." },
-            { term: "Investidura", desc: "Ato formal pelo qual o suserano entregava ao vassalo um símbolo do feudo concedido (um ramo, um punhado de terra)." },
-            { term: "Escolástica", desc: "Método de ensino e pensamento filosófico acadêmico praticado nas universidades medievais a partir do século XII." }
-        ];
-
-        /* ================= STATE & PERSISTENCE ================= */
-        let bookmarks = JSON.parse(localStorage.getItem('academic_bookmarks') || '[]');
-        let userNotes = JSON.parse(localStorage.getItem('academic_notes') || '[]');
+        /* ================= STATE & STORAGE ================= */
+        let bookmarks = JSON.parse(localStorage.getItem('academic_bookmarks_v2') || '[]');
+        let userNotes = JSON.parse(localStorage.getItem('academic_notes_v2') || '[]');
+        let forumPosts = JSON.parse(localStorage.getItem('academic_forum_v2') || '[]');
+        
         let activeNoteId = null;
         let showOnlyBookmarks = false;
 
@@ -844,6 +711,22 @@
 
         let currentQuizIndex = 0;
         let quizScore = 0;
+        let activeModalTextId = null;
+
+        // Default forum seed if empty
+        if (forumPosts.length === 0) {
+            forumPosts = [
+                {
+                    id: 'post-1',
+                    author: 'Prof. Monitoria',
+                    textRef: 'Perry Anderson',
+                    title: 'Dica de leitura: Conceito de síntese',
+                    body: 'Ao lerem Perry Anderson, prestem atenção na comparação que ele faz entre o norte e o sul da Europa no tocante à herança romana.',
+                    date: '14/10/2026'
+                }
+            ];
+            localStorage.setItem('academic_forum_v2', JSON.stringify(forumPosts));
+        }
 
         /* ================= NAVIGATION LOGIC ================= */
         function switchTab(tabId) {
@@ -876,23 +759,23 @@
             document.documentElement.classList.add('dark');
         }
 
-        /* ================= TEXT LIBRARY RENDERER ================= */
+        /* ================= TEXT RENDERER ================= */
         function renderTexts() {
             const container = document.getElementById('texts-container');
             const emptyState = document.getElementById('texts-empty-state');
             const searchVal = document.getElementById('search-input').value.toLowerCase();
-            const periodVal = document.getElementById('period-filter').value;
-            const typeVal = document.getElementById('type-filter').value;
+            const catVal = document.getElementById('category-filter').value;
+            const tagVal = document.getElementById('tag-filter').value;
 
             const filtered = textsData.filter(item => {
                 const matchesSearch = item.title.toLowerCase().includes(searchVal) ||
                                      item.author.toLowerCase().includes(searchVal) ||
-                                     item.tags.some(t => t.toLowerCase().includes(searchVal));
-                const matchesPeriod = periodVal === 'ALL' || item.period === periodVal;
-                const matchesType = typeVal === 'ALL' || item.type === typeVal;
+                                     item.summary.toLowerCase().includes(searchVal);
+                const matchesCat = catVal === 'ALL' || item.category === catVal;
+                const matchesTag = tagVal === 'ALL' || item.tags.includes(tagVal);
                 const matchesBookmark = !showOnlyBookmarks || bookmarks.includes(item.id);
 
-                return matchesSearch && matchesPeriod && matchesType && matchesBookmark;
+                return matchesSearch && matchesCat && matchesTag && matchesBookmark;
             });
 
             container.innerHTML = '';
@@ -904,29 +787,29 @@
                 filtered.forEach(item => {
                     const isBookmarked = bookmarks.includes(item.id);
                     const card = document.createElement('div');
-                    card.className = "bg-white dark:bg-navy-900 rounded border border-academic-200 dark:border-navy-800 p-5 shadow-sm hover:border-academic-300 dark:hover:border-navy-700 transition flex flex-col justify-between space-y-3";
+                    card.className = "bg-white dark:bg-navy-900 rounded border border-academic-200 dark:border-navy-800 p-5 shadow-sm hover:border-academic-300 dark:hover:border-navy-700 transition flex flex-col justify-between space-y-4";
                     card.innerHTML = `
-                        <div class="space-y-2">
+                        <div class="space-y-2.5">
                             <div class="flex justify-between items-start">
-                                <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-academic-100 dark:bg-navy-800 text-slate-700 dark:text-slate-300 uppercase">${item.period}</span>
-                                <button onclick="toggleBookmark('${item.id}', event)" class="text-xs text-slate-400 hover:text-gold-600 transition">
+                                <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-academic-100 dark:bg-navy-800 text-gold-600 dark:text-amber-400 uppercase tracking-wide">${item.category}</span>
+                                <button onclick="toggleBookmark('${item.id}', event)" class="text-xs text-slate-400 hover:text-gold-600 transition" title="Salvar leitura">
                                     <i class="${isBookmarked ? 'fa-solid text-gold-600' : 'fa-regular'} fa-bookmark"></i>
                                 </button>
                             </div>
                             <div>
-                                <span class="text-[10px] font-semibold text-gold-600 dark:text-amber-400 block">${item.author} • ${item.pages}</span>
-                                <h3 class="font-heading text-base font-bold text-navy-900 dark:text-slate-100 mt-0.5">${item.title}</h3>
+                                <span class="text-[11px] font-bold text-slate-700 dark:text-slate-300 block">${item.author} • ${item.pages}</span>
+                                <h3 class="font-heading text-base font-bold text-navy-900 dark:text-slate-100 mt-1 leading-snug">${item.title}</h3>
                             </div>
-                            <p class="font-serif text-xs text-slate-600 dark:text-slate-300 line-clamp-3 leading-relaxed">
+                            <p class="font-serif text-xs text-slate-600 dark:text-slate-300 leading-relaxed line-clamp-4">
                                 ${item.summary}
                             </p>
                         </div>
-                        <div class="pt-2 border-t border-academic-100 dark:border-navy-800 space-y-2">
+                        <div class="pt-3 border-t border-academic-100 dark:border-navy-800 space-y-2">
                             <div class="flex flex-wrap gap-1">
-                                ${item.tags.map(t => `<span class="text-[9px] px-1.5 py-0.5 bg-academic-50 dark:bg-navy-800 text-slate-600 dark:text-slate-400 rounded">${t}</span>`).join('')}
+                                ${item.tags.map(t => `<span class="text-[9px] font-semibold px-2 py-0.5 bg-academic-50 dark:bg-navy-800 text-slate-600 dark:text-slate-400 rounded">${t}</span>`).join('')}
                             </div>
-                            <button onclick="openReaderModal('${item.id}')" class="w-full py-1.5 bg-academic-100 dark:bg-navy-800 hover:bg-navy-900 hover:text-white dark:hover:bg-gold-600 dark:hover:text-navy-950 text-slate-800 dark:text-slate-200 text-xs font-semibold rounded transition flex items-center justify-center gap-1.5">
-                                <i class="fa-solid fa-book-open text-[10px]"></i> Consultar Texto & Citação
+                            <button onclick="openReaderModal('${item.id}')" class="w-full py-2 bg-academic-100 dark:bg-navy-800 hover:bg-navy-900 hover:text-white dark:hover:bg-gold-600 dark:hover:text-navy-950 text-slate-800 dark:text-slate-200 text-xs font-semibold rounded transition flex items-center justify-center gap-1.5">
+                                <i class="fa-solid fa-book-open text-[10px]"></i> Consultar Ficha & Citação ABNT
                             </button>
                         </div>
                     `;
@@ -946,7 +829,7 @@
             } else {
                 bookmarks.push(id);
             }
-            localStorage.setItem('academic_bookmarks', JSON.stringify(bookmarks));
+            localStorage.setItem('academic_bookmarks_v2', JSON.stringify(bookmarks));
             renderTexts();
         }
 
@@ -957,21 +840,22 @@
             renderTexts();
         }
 
-        /* ================= MODAL READER ================= */
+        /* ================= MODAL & READER ================= */
         function openReaderModal(id) {
             const text = textsData.find(t => t.id === id);
             if (!text) return;
 
-            document.getElementById('modal-period-badge').innerText = text.period;
+            activeModalTextId = id;
+            document.getElementById('modal-category-badge').innerText = text.category;
             document.getElementById('modal-title').innerText = text.title;
-            document.getElementById('modal-author').innerText = text.author;
+            document.getElementById('modal-author').innerText = `${text.author} (${text.pages})`;
             document.getElementById('modal-abnt').innerText = text.abnt;
             document.getElementById('modal-summary').innerText = text.summary;
-            document.getElementById('modal-excerpt').innerText = `"${text.excerpt}"`;
+            document.getElementById('modal-excerpt').innerText = text.excerpt;
 
             const isBookmarked = bookmarks.includes(id);
             const bmBtn = document.getElementById('modal-bookmark-btn');
-            bmBtn.innerHTML = `<i class="${isBookmarked ? 'fa-solid text-gold-600' : 'fa-regular'} fa-bookmark"></i> ${isBookmarked ? 'Leitura Salva' : 'Salvar Leitura'}`;
+            bmBtn.innerHTML = `<i class="${isBookmarked ? 'fa-solid text-gold-600' : 'fa-regular'} fa-bookmark"></i> ${isBookmarked ? 'Salvo nos Favoritos' : 'Salvar Leitura'}`;
             bmBtn.onclick = () => { toggleBookmark(id); openReaderModal(id); };
 
             document.getElementById('reader-modal').classList.remove('hidden');
@@ -987,7 +871,23 @@
             alert('Referência ABNT copiada para a área de transferência.');
         }
 
-        /* ================= STUDY TOOLS LOGIC ================= */
+        function openNoteForText() {
+            const text = textsData.find(t => t.id === activeModalTextId);
+            closeReaderModal();
+            switchTab('notes');
+
+            const newNote = {
+                id: 'note-' + Date.now(),
+                title: `Fichamento - ${text.author}`,
+                body: `REFERÊNCIA ABNT:\n${text.abnt}\n\nSÍNTESE DO TEXTO:\n${text.summary}\n\nCITAÇÕES DESTAQUE:\n"${text.excerpt}"\n\nSUAS ANOTAÇÕES:\n- `
+            };
+            userNotes.unshift(newNote);
+            activeNoteId = newNote.id;
+            saveNotes();
+            loadActiveNote();
+        }
+
+        /* ================= FLASHCARDS LOGIC ================= */
         function updateCardDisplay() {
             const card = flashcardsData[currentCardIndex];
             document.getElementById('flashcard-tag').innerText = card.tag;
@@ -1013,7 +913,7 @@
         }
 
         function switchStudySubtab(subId) {
-            ['flashcards', 'quiz', 'glossary'].forEach(s => {
+            ['flashcards', 'quiz'].forEach(s => {
                 document.getElementById(`subtab-${s}`).classList.add('hidden');
                 const btn = document.getElementById(`subtab-btn-${s}`);
                 btn.classList.remove('border-gold-600', 'text-gold-600', 'font-bold');
@@ -1072,7 +972,7 @@
                 optsBtns[optIdx].classList.remove('opacity-60');
                 optsBtns[optIdx].classList.add('bg-emerald-100', 'border-emerald-500', 'font-bold', 'text-emerald-900');
                 feedback.className = "p-3 rounded text-xs font-serif bg-emerald-50 dark:bg-emerald-950/40 text-emerald-800 dark:text-emerald-300 border border-emerald-200";
-                feedback.innerText = "✓ Resposta Correta! " + q.explanation;
+                feedback.innerText = "✓ Correto! " + q.explanation;
             } else {
                 optsBtns[optIdx].classList.remove('opacity-60');
                 optsBtns[optIdx].classList.add('bg-rose-100', 'border-rose-500', 'font-bold', 'text-rose-900');
@@ -1092,31 +992,57 @@
             } else {
                 document.getElementById('quiz-active-screen').classList.add('hidden');
                 document.getElementById('quiz-result-screen').classList.remove('hidden');
-                document.getElementById('quiz-final-score').innerText = `Você atingiu ${quizScore} pontos.`;
+                document.getElementById('quiz-final-score').innerText = `Você concluiu o teste com ${quizScore} pontos.`;
             }
         }
 
-        /* ================= GLOSSARY RENDER ================= */
-        function renderGlossary() {
-            const list = document.getElementById('glossary-list');
-            const searchVal = document.getElementById('glossary-search').value.toLowerCase();
-            list.innerHTML = '';
+        /* ================= FORUM LOGIC ================= */
+        function renderForumPosts() {
+            const container = document.getElementById('forum-posts-container');
+            container.innerHTML = '';
 
-            const filtered = glossaryTerms.filter(g => g.term.toLowerCase().includes(searchVal) || g.desc.toLowerCase().includes(searchVal));
-
-            filtered.forEach(g => {
+            forumPosts.forEach(post => {
                 const card = document.createElement('div');
-                card.className = "bg-white dark:bg-navy-900 p-4 rounded border border-academic-200 dark:border-navy-800 space-y-1";
+                card.className = "bg-white dark:bg-navy-900 p-4 rounded border border-academic-200 dark:border-navy-800 shadow-sm space-y-2";
                 card.innerHTML = `
-                    <h4 class="font-heading font-bold text-gold-600 text-xs">${g.term}</h4>
-                    <p class="font-serif text-xs text-slate-600 dark:text-slate-300 leading-relaxed">${g.desc}</p>
+                    <div class="flex justify-between items-center text-xs text-slate-500">
+                        <span class="font-bold text-navy-900 dark:text-amber-400">${post.author}</span>
+                        <span>${post.date}</span>
+                    </div>
+                    <span class="inline-block text-[10px] font-semibold px-2 py-0.5 bg-academic-100 dark:bg-navy-800 rounded text-gold-600">${post.textRef}</span>
+                    <h3 class="font-heading font-bold text-sm text-slate-800 dark:text-slate-100">${post.title}</h3>
+                    <p class="font-serif text-xs text-slate-600 dark:text-slate-300 leading-relaxed">${post.body}</p>
                 `;
-                list.appendChild(card);
+                container.appendChild(card);
             });
         }
 
-        function filterGlossary() {
-            renderGlossary();
+        function addForumPost() {
+            const author = document.getElementById('forum-author-input').value.trim() || 'Estudante Anônimo';
+            const textRef = document.getElementById('forum-text-select').value;
+            const title = document.getElementById('forum-title-input').value.trim();
+            const body = document.getElementById('forum-body-input').value.trim();
+
+            if (!title || !body) {
+                alert('Preencha o título e o corpo da dúvida antes de publicar.');
+                return;
+            }
+
+            const newPost = {
+                id: 'post-' + Date.now(),
+                author,
+                textRef,
+                title,
+                body,
+                date: new Date().toLocaleDateString('pt-BR')
+            };
+
+            forumPosts.unshift(newPost);
+            localStorage.setItem('academic_forum_v2', JSON.stringify(forumPosts));
+            renderForumPosts();
+
+            document.getElementById('forum-title-input').value = '';
+            document.getElementById('forum-body-input').value = '';
         }
 
         /* ================= NOTEBOOK ENGINE ================= */
@@ -1173,7 +1099,7 @@
         }
 
         function saveNotes() {
-            localStorage.setItem('academic_notes', JSON.stringify(userNotes));
+            localStorage.setItem('academic_notes_v2', JSON.stringify(userNotes));
             renderNotesList();
         }
 
@@ -1188,9 +1114,9 @@
         function insertNoteTemplate(type) {
             const body = document.getElementById('note-body-input');
             if (type === 'abnt') {
-                body.value += `\n\n--- ESTRUTURA ABNT ---\nREFERÊNCIA: \nTESE DO AUTOR: \nPRINCIPAIS CONCEITOS: \nCONCLUSÃO: \n`;
+                body.value += `\n\n--- ESTRUTURA ABNT ---\nREFERÊNCIA: \nTESE CENTRAL: \nARGUMENTOS DO AUTOR: \nCITAÇÕES CHAVE: \n`;
             } else if (type === 'quote') {
-                body.value += `\n"Citação direta do autor..." (BLOCH, 2021, p. XX)`;
+                body.value += `\n"Citação direta..." (SOBRENOME, Ano, p. XX)`;
             }
             body.dispatchEvent(new Event('input'));
         }
@@ -1215,7 +1141,7 @@
         window.onload = function() {
             renderTexts();
             updateCardDisplay();
-            renderGlossary();
+            renderForumPosts();
 
             if (userNotes.length === 0) {
                 createNewNote();
